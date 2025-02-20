@@ -3,8 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\UruVania\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\assets\\new\\01 - player\\script\\scr_player_03_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\script\\scr_player_03_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\assets\\new\\01 - player\\01 - scripts\\scr_player_05_actions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_05_actions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\01 - Scripts\\Scr_05_Universal_Action_Manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\01 - Scripts\\Scr_02_State_Manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\assets\\new\\01 - player\\01 - scripts\\scr_player_06_animations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_06_animations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +24,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Scr_Player_03_Movement.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\Assets\\NEW\\01 - Player\\Script\\Scr_Player_03_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\Script\\Scr_Player_03_Movement.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\Assets\\NEW\\01 - Player\\Script\\Scr_Player_03_Movement.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\Script\\Scr_Player_03_Movement.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAwwF0AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Scr_05_Universal_Action_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\01 - Scripts\\Scr_05_Universal_Action_Manager.cs",
+              "RelativeDocumentMoniker": "..\\01 - Scripts\\Scr_05_Universal_Action_Manager.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\01 - Scripts\\Scr_05_Universal_Action_Manager.cs",
+              "RelativeToolTip": "..\\01 - Scripts\\Scr_05_Universal_Action_Manager.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAGQAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T21:27:20.744Z",
+              "WhenOpened": "2025-02-20T21:32:48.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Scr_Player_06_Animations.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Animations.cs",
+              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Animations.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Animations.cs",
+              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Animations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T21:26:48.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Scr_02_State_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\01 - Scripts\\Scr_02_State_Manager.cs",
+              "RelativeDocumentMoniker": "..\\01 - Scripts\\Scr_02_State_Manager.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\01 - Scripts\\Scr_02_State_Manager.cs",
+              "RelativeToolTip": "..\\01 - Scripts\\Scr_02_State_Manager.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T21:15:08.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Scr_Player_05_Actions.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
+              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
+              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T21:15:04.465Z",
               "EditorCaption": ""
             }
           ]

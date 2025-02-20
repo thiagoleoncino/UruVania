@@ -59,6 +59,7 @@
     <Compile Include="Assets\OLD\05 - Items\Scr_Orb.cs" />
     <Compile Include="Assets\OLD\04 - Objects\Scripts\Scr_Drop_Item.cs" />
     <Compile Include="Assets\OLD\05 - Items\Scr_Item.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_06_Animations.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Effects.cs" />
     <Compile Include="Assets\OLD\09 - Audio\Scr_Audio_Prefab.cs" />
     <Compile Include="Assets\OLD\09 - Audio\Scr_Enemy_Audio.cs" />
@@ -69,10 +70,12 @@
     <Compile Include="Assets\OLD\04 - Objects\Scripts\Scr_Objeto_Bridge.cs" />
     <Compile Include="Assets\OLD\04 - Objects\Scripts\Scr_Objeto_Destroy.cs" />
     <Compile Include="Assets\OLD\06 - Bosses\Boss_1\Scr_Boss_1_Detect.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_02_States.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Detect.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Scr_Enemy_Flip.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_03_Statistics.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3.cs" />
-    <Compile Include="Assets\NEW\01 - Player\Script\Scr_Player_03_Movement.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_04_Physics.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Damage.cs" />
     <Compile Include="Assets\OLD\05 - Items\Player Items\Scripts\Scr_Item_Axe.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Camara.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Assets\OLD\08 - Camera\Scr_Follow_Manager.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Scene_Manager.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Zone_Change.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_01_Controls.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Audio.cs" />
     <Compile Include="Assets\OLD\06 - Bosses\Boss_1\Scr_Boss_1.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3_Detect.cs" />
@@ -100,8 +104,7 @@
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4_Detect_2.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Check_Point.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4.cs" />
-    <Compile Include="Assets\NEW\01 - Player\Script\Scr_Player_02_Stats.cs" />
-    <Compile Include="Assets\NEW\01 - Player\Script\Scr_Player_01_Controls.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_05_Actions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
