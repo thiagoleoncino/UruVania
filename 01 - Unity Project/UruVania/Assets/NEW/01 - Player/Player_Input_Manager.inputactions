@@ -1,0 +1,134 @@
+{
+    "name": "Player_Input_Manager",
+    "maps": [
+        {
+            "name": "Player_Action_Map",
+            "id": "007e414a-7fa0-42e0-b2f3-6978a3e3f6a9",
+            "actions": [
+                {
+                    "name": "Input_Button_1",
+                    "type": "Button",
+                    "id": "dc3011e2-cbb6-4f8c-9b43-16446a75a30d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Input_Button_2",
+                    "type": "Button",
+                    "id": "485e707e-1490-4ca4-9174-5396ae8d3579",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Input_Button_3",
+                    "type": "Button",
+                    "id": "5a1dd0ec-ee8e-4cbb-9946-88156a09878a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Input_Button_4",
+                    "type": "Button",
+                    "id": "7aaedce6-90d7-443d-a33f-e155afc8a623",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Input_Trigger_1",
+                    "type": "Button",
+                    "id": "1614e505-a931-4079-843b-2eb7a14ce334",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Input_Trigger_2",
+                    "type": "Button",
+                    "id": "1d05953d-c24b-4082-8ba9-d5298368835d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7cb074b8-12cb-46af-9c25-17cb905daeba",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Input_Button_1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5c7dafc-9fcf-4887-bbaf-b8c22ba905f5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Input_Button_2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a5a0159-f269-4012-bfde-b574c8170adf",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Input_Button_4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "543994e9-9442-4df6-bd1f-986890a3b5d9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Input_Button_3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed76b1f3-5807-4400-a705-65dbfe62ee3f",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Input_Trigger_1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "526ba21f-d67d-41fd-b8d6-8c57f0fbb5da",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Input_Trigger_2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
