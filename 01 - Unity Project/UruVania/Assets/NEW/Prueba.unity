@@ -539,6 +539,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618179991}
     m_Modifications:
+    - target: {fileID: 1896004325805990754, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8387d33b312f4f242bb509604f73bcd0, type: 2}
     - target: {fileID: 3218648201804491950, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
       propertyPath: m_Name
       value: ProBuilder_004_OrangeBlock (2)
@@ -1902,6 +1906,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618179991}
     m_Modifications:
+    - target: {fileID: 1896004325805990754, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8387d33b312f4f242bb509604f73bcd0, type: 2}
     - target: {fileID: 3218648201804491950, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
       propertyPath: m_Name
       value: ProBuilder_004_OrangeBlock (3)
@@ -2483,6 +2491,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618179991}
     m_Modifications:
+    - target: {fileID: 1896004325805990754, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8387d33b312f4f242bb509604f73bcd0, type: 2}
     - target: {fileID: 3218648201804491950, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
       propertyPath: m_Name
       value: ProBuilder_004_OrangeBlock (1)
@@ -2789,6 +2801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 618179991}
     m_Modifications:
+    - target: {fileID: 1896004325805990754, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 364b3af2c1e559345986642838b54b17, type: 2}
     - target: {fileID: 3218648201804491950, guid: c3dc22283040fd54387174b1843b6b15, type: 3}
       propertyPath: m_Name
       value: ProBuilder_004_OrangeBlock

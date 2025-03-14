@@ -13,10 +13,10 @@ public class Scr_Player_07_Combat : MonoBehaviour
     private Scr_Player_08_Hitbox playerHitbox;
 
     public string actualAttack;
-
-    public int attackCount;
     public bool attackCanBeCancel;
 
+    public int comboCount = 0;
+    private const int maxCombo = 3;
 
     void Awake()
     {
@@ -29,91 +29,86 @@ public class Scr_Player_07_Combat : MonoBehaviour
         playerHitbox = GetComponentInChildren<Scr_Player_08_Hitbox>();
     }
 
+    private bool normalAttack1UsedInCombo = false; // Para rastrear si se usó en este combo
+
     void Update()
     {
-        // Passive Actions
         if (playerState.passiveAction)
         {
-            // Actions in the Ground
             if (playerState.stateGrounded)
             {
                 if (playerControl.button4Tap)
                 {
                     Attack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
+                    normalAttack1UsedInCombo = true; // Marcamos que NormalAttack1 fue usado
+                    return;
                 }
 
                 if (playerControl.button4Hold)
                 {
                     Attack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
+                    return;
                 }
 
                 if (playerControl.button1Tap)
                 {
                     Attack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
+                    return;
                 }
 
                 if (playerControl.button1Hold)
                 {
                     Attack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
+                    return;
                 }
             }
         }
 
-        // Semi Cancelable Action (Combo code)
-        if(playerState.semiCancelableAction)
+        if (playerState.semiCancelableAction && attackCanBeCancel && playerHitbox.enemyDetected && comboCount < maxCombo)
         {
-            //If the attack can be cancel and we hit an enemy
-            if(attackCanBeCancel && playerHitbox.enemyDetected)
+            if (playerControl.button4Tap)
             {
-
-                if (playerControl.button4Tap)
+                if (normalAttack1UsedInCombo) // Solo permite NormalAttack2 si NormalAttack1 fue usado en este combo
                 {
                     Attack("NormalAttack2", "Anim_Player_09_NormalAttack2", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
+                }
+                else
+                {
+                    Attack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0); // Si no, ejecuta NormalAttack1 primero
+                    normalAttack1UsedInCombo = true;
                 }
 
-                if (playerControl.button4Hold)
-                {
-                    Attack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
-                }
+                attackCanBeCancel = false;
+                return;
+            }
 
-                if (playerControl.button1Tap)
-                {
-                    Attack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
-                }
+            if (playerControl.button4Hold)
+            {
+                Attack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
+                attackCanBeCancel = false;
+                return;
+            }
 
-                if (playerControl.button1Hold)
-                {
-                    Attack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
-                }
+            if (playerControl.button1Tap)
+            {
+                Attack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
+                attackCanBeCancel = false;
+                return;
+            }
 
-
-                /*/Normal Attack Combo Tree
-                if(actualAttack == "NormalAttack1")
-                {
-                    if (playerControl.button4Tap)
-                    {
-                        Attack("NormalAttack2", "Anim_Player_09_NormalAttack2", 0, 0);
-                        return; // Evita que se ejecuten otras acciones en el mismo frame
-                    }
-
-                    if (playerControl.button4Hold)
-                    {
-                        Attack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
-                        return; // Evita que se ejecuten otras acciones en el mismo frame
-                    }
-                } */
-
+            if (playerControl.button1Hold)
+            {
+                Attack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+                attackCanBeCancel = false;
+                return;
             }
         }
     }
+
+
+
+
+
 
     public void Attack(string attackName, string animationName, float velX, float velY)
     {
@@ -123,11 +118,23 @@ public class Scr_Player_07_Combat : MonoBehaviour
         playerState.semiCancelableAction = true;
         playerPhisic.PlayerHorizontalMoveFunction(velX);
         playerPhisic.PlayerVerticalMoveFunction(velY);
+
+        comboCount++; // Incrementa el contador de combos correctamente
+        Debug.Log("Combo Count: " + comboCount); // Depuración para ver el valor real de comboCount
+
+        if (comboCount >= maxCombo)
+        {
+            attackCanBeCancel = false; // Bloquea el cancel después de 3 ataques
+        }
     }
+
 
     public void EventAttackCanBeCancel()
     {
-        attackCanBeCancel = true;
+        if (comboCount < maxCombo)
+        {
+            attackCanBeCancel = true;
+        }
     }
 
     public void EventFinishAttack()
@@ -135,6 +142,7 @@ public class Scr_Player_07_Combat : MonoBehaviour
         playerState.passiveAction = true;
         attackCanBeCancel = false;
         playerHitbox.enemyDetected = false;
+        comboCount = 0; // Reinicia el contador cuando termina la animación
+        normalAttack1UsedInCombo = false; // Reinicia el estado de NormalAttack1 en el combo
     }
-   
 }
