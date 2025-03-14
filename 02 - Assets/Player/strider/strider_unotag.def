@@ -1,0 +1,38 @@
+﻿; ---- Created by Uno Tag Team Patcher ---- ;
+
+
+
+[info]
+name="strider"
+displayname="Strider"
+versiondate =09,30,2009
+mugenversion =1.0
+author ="Beximus"
+pal.defaults=4,2,3,1,5
+
+
+[files]
+cmd=strider_unotag\strider.cmd
+cns=strider_unotag\strider.cns
+st=strider_unotag\strider.cns
+stcommon=common1.cns
+sprite=strider.sff
+anim=strider.air
+sound=strider.snd
+pal1=strider1.act
+pal2=strider2.act
+pal3=strider3.act
+pal4=strider4.act
+pal5=strider5.act
+pal6=strider6.act
+pal7=strider7.act
+pal8=strider8.act
+pal9=strider9.act
+pal10=strider10.act
+pal11=strider11.act
+pal12=strider12.act
+st1=VS_engine.cns
+st9=strider_unotag\tag_system.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=
