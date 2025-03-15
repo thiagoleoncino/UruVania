@@ -246,8 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualAttack: 
-  playerCanCombo: 0
-  attackCounter: 0
+  attackCanBeCancel: 0
+  comboCount: 0
+  playerCollision: 0
 --- !u!1 &7675947524384511449
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,9 +424,15 @@ MonoBehaviour:
   directionDiagonalDownLeft: 0
   directionDiagonalUpLeft: 0
   button1: 0
+  button1Tap: 0
+  button1Hold: 0
   button2: 0
+  button2Tap: 0
+  button2Hold: 0
   button3: 0
   button4: 0
+  button4Tap: 0
+  button4Hold: 0
   leftTrigger: 0
   rightTrigger: 0
   buttonStart: 0
@@ -447,6 +454,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 576
+  playerLand: 0
 --- !u!114 &6986362689155634078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,3 +498,4 @@ MonoBehaviour:
   totalJumps: 0
   actualAction: 
   rightSide: 0
+  playerCanDoubleJump: 0

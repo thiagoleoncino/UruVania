@@ -18,7 +18,7 @@ public class Scr_Player_02_States : MonoBehaviour
         SemiCancelable,
         NonCancelable
     }
-    
+
     public GroundState currentGroundState;
     public bool stateGrounded
     {
@@ -58,6 +58,9 @@ public class Scr_Player_02_States : MonoBehaviour
     [Space]
     public LayerMask groundLayerMask;
     private Vector3 halfExtents;
+    public bool playerLand;
+
+    private bool wasAirborn = false;
 
     public bool IsGrounded() //Grounded Bool Function
     {
@@ -75,5 +78,24 @@ public class Scr_Player_02_States : MonoBehaviour
     {
         stateGrounded = IsGrounded(); // Grounded
         stateAirborn = !IsGrounded(); // Airborn
+
+        // Verificar si el estado cambia de Airborn a Grounded
+        if (stateGrounded && wasAirborn)
+        {
+            wasAirborn = false;
+            StartCoroutine(HandlePlayerLand());
+        }
+
+        if (stateAirborn)
+        {
+            wasAirborn = true;
+        }
+    }
+
+    private IEnumerator HandlePlayerLand()
+    {
+        playerLand = true;  // Activar playerLand
+        yield return new WaitForSeconds(0.1f);  // Mantenerlo activo durante 2 segundos (puedes cambiar este tiempo)
+        playerLand = false; // Desactivar playerLand después de 2 segundos
     }
 }

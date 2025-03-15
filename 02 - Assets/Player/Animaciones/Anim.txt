@@ -1,22 +1,22 @@
-Anim_Player_01_Idle
-Anim_Player_02_Walk
-Anim_Player_03_Run
+Anim_Player_01_Idle *
+Anim_Player_02_Walk *
+Anim_Player_03_Run *
 
-Anim_Player_04_Jump
-Anim_Player_05_DoubleJump
-Anim_Player_06_WallJump
-Anim_Player_07_Fall
+Anim_Player_04_Jump *
+Anim_Player_05_DoubleJump *
+Anim_Player_06_Fall *
+Anim_Player_07_Land *
 
-Anim_Player_08_NormalAttack1
-Anim_Player_09_NormalAttack2
-Anim_Player_10_ChargingNormal
-Anim_Player_11_NormalChargeAttack
-Anim_Player_12_NormalJumpAttack
-Anim_Player_13_NormalDashAttack
+Anim_Player_08_NormalAttack1 *
+Anim_Player_09_NormalAttack2 *
+Anim_Player_10_ChargingNormal 
+Anim_Player_11_NormalChargeAttack *
+Anim_Player_12_NormalJumpAttack *
+Anim_Player_13_NormalDashAttack *
 
-Anim_Player_14_PonchoAttack
-Anim_Player_15_ChargingPoncho
-Anim_Player_16_PonchoChargeAttack
-Anim_Player_17_PonchoJumpAttack
-Anim_Player_18_Dodge
+Anim_Player_14_PonchoAttack *
+Anim_Player_15_ChargingPoncho 
+Anim_Player_16_PonchoChargeAttack *
+Anim_Player_17_PonchoJumpAttack *
+Anim_Player_18_Dodge *
 

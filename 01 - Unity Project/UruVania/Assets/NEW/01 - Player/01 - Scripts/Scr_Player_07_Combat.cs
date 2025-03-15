@@ -18,6 +18,8 @@ public class Scr_Player_07_Combat : MonoBehaviour
     public int comboCount = 0;
     private const int maxCombo = 3;
 
+    public bool playerCollision;
+
     void Awake()
     {
         playerControl = GetComponentInParent<Scr_Player_01_Controls>();
@@ -33,36 +35,70 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
     void Update()
     {
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Layer_Player"), LayerMask.NameToLayer("Layer_Enemy"), playerCollision);
+
         if (playerState.passiveAction)
         {
             if (playerState.stateGrounded)
             {
                 if (playerControl.button4Tap)
                 {
-                    Attack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0);
+                    GroundAttack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0);
                     normalAttack1UsedInCombo = true; // Marcamos que NormalAttack1 fue usado
                     return;
                 }
 
                 if (playerControl.button4Hold)
                 {
-                    Attack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
+                    GroundAttack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
                     return;
                 }
 
                 if (playerControl.button1Tap)
                 {
-                    Attack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
+                    GroundAttack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
                     return;
                 }
 
                 if (playerControl.button1Hold)
                 {
-                    Attack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+                    GroundAttack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+                    return;
+                }
+
+                if (playerControl.leftTrigger && playerControl.button4)
+                {
+                    GroundAttack("NormalDashAttack", "Anim_Player_13_NormalDashAttack", 10, 0);
+                    return;
+                }
+
+                if (playerControl.leftTrigger && playerControl.button1)
+                {
+                    GroundAttack("NormalDashAttack", "Anim_Player_18_Dodge", 10, 0);
+                    playerCollision = true;
                     return;
                 }
             }
         }
+
+        if (playerState.passiveAction || playerState.cancelableAction)
+        {
+            if (playerState.stateAirborn)
+            {
+                if (playerControl.button4)
+                {
+                    AirAttack("NormalJumpAttack", "Anim_Player_12_NormalJumpAttack");
+                    return;
+                }
+
+                if (playerControl.button1)
+                {
+                    AirAttack("PonchoJumpAttack", "Anim_Player_17_PonchoJumpAttack");
+                    return;
+                }
+            }
+        }
+
 
         if (playerState.semiCancelableAction && attackCanBeCancel && playerHitbox.enemyDetected && comboCount < maxCombo)
         {
@@ -70,11 +106,11 @@ public class Scr_Player_07_Combat : MonoBehaviour
             {
                 if (normalAttack1UsedInCombo) // Solo permite NormalAttack2 si NormalAttack1 fue usado en este combo
                 {
-                    Attack("NormalAttack2", "Anim_Player_09_NormalAttack2", 0, 0);
+                    GroundAttack("NormalAttack2", "Anim_Player_09_NormalAttack2", 0, 0);
                 }
                 else
                 {
-                    Attack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0); // Si no, ejecuta NormalAttack1 primero
+                    GroundAttack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0); // Si no, ejecuta NormalAttack1 primero
                     normalAttack1UsedInCombo = true;
                 }
 
@@ -84,39 +120,39 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
             if (playerControl.button4Hold)
             {
-                Attack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
+                GroundAttack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
                 attackCanBeCancel = false;
                 return;
             }
 
             if (playerControl.button1Tap)
             {
-                Attack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
+                GroundAttack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
                 attackCanBeCancel = false;
                 return;
             }
 
             if (playerControl.button1Hold)
             {
-                Attack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+                GroundAttack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
                 attackCanBeCancel = false;
                 return;
             }
         }
     }
 
-
-
-
-
-
-    public void Attack(string attackName, string animationName, float velX, float velY)
+    public void GroundAttack(string attackName, string animationName, float velX, float velY)
     {
         actualAttack = attackName;
         playerAction.actualAction = attackName;
         playerAnimation.ChangeAnimation(animationName);
         playerState.semiCancelableAction = true;
-        playerPhisic.PlayerHorizontalMoveFunction(velX);
+
+        if (playerAction.rightSide)
+        {
+            playerPhisic.PlayerHorizontalMoveFunction(velX);
+        } else { playerPhisic.PlayerHorizontalMoveFunction(-velX); }
+
         playerPhisic.PlayerVerticalMoveFunction(velY);
 
         comboCount++; // Incrementa el contador de combos correctamente
@@ -128,6 +164,13 @@ public class Scr_Player_07_Combat : MonoBehaviour
         }
     }
 
+    public void AirAttack(string attackName, string animationName)
+    {
+        actualAttack = attackName;
+        playerAction.actualAction = attackName;
+        playerAnimation.ChangeAnimation(animationName);
+        playerState.semiCancelableAction = true;
+    }
 
     public void EventAttackCanBeCancel()
     {
@@ -145,4 +188,15 @@ public class Scr_Player_07_Combat : MonoBehaviour
         comboCount = 0; // Reinicia el contador cuando termina la animación
         normalAttack1UsedInCombo = false; // Reinicia el estado de NormalAttack1 en el combo
     }
+
+    public void EventDisableCollision()
+    {
+        playerCollision = true;
+    }
+
+    public void EventActivateCollision()
+    {
+        playerCollision = false;
+    }
+
 }

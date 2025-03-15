@@ -36,6 +36,15 @@ public class Scr_Player_05_Actions : MonoBehaviour
 
     void Update()
     {
+        //Player Land Code
+        if (playerState.playerLand)
+        {
+            actualAction = "Land";
+            playerAnimation.ChangeAnimation("Anim_Player_07_Land");
+            playerState.noCancelableAction = true;
+            return; // Evita que se ejecuten otras acciones en el mismo frame
+        }
+
         // Passive Actions
         if (playerState.passiveAction)
         {
@@ -89,7 +98,7 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 if (actualAction != "Jump" || actualAction != "DoubleJump" || playerAnimation.AnimationFinished("Anim_Player_04_Jump") || playerAnimation.AnimationFinished("Anim_Player_05_DoubleJump"))
                 {
                     actualAction = "Fall";
-                    playerAnimation.ChangeAnimation("Anim_Player_07_Fall");
+                    playerAnimation.ChangeAnimation("Anim_Player_06_Fall");
                     playerState.passiveAction = true;
                 }
 
@@ -112,15 +121,4 @@ public class Scr_Player_05_Actions : MonoBehaviour
         }
     }
 
-    public void Amen()
-    {
-        // XXXXXXXXXXXXXXXX
-        if (playerControl.button4)
-        {
-            actualAction = "NormalAttack1";
-            playerAnimation.ChangeAnimation("Anim_Player_09_NormalAttack2");
-            playerState.semiCancelableAction = true;
-            //return; // Evita que se ejecuten otras acciones en el mismo frame
-        }
-    }
 }

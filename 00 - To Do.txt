@@ -1,36 +1,20 @@
 Actuales:
 	- Actualizando el control al Nuevo Sistema de Inputs
-	- Terminar el script, agregar ejes y diagonales
-	- Refinar el sistema de ataques y combos
-	
+	- Agregar Input, botons de ejes y diagonales
+
 ------------------------------------------------------------------------------------
-TO DO NOW:
+TO DO:
 	
 Pequeños bugs/mejoras
-	- Hacer mas suave la transicion entre caminar y correr
 
 Documento de Programacion
 	- Funcionamiento Jugador (Actualizar!)
-			- Nuevos scripts
-			- Script 02 Player States
-			- Agregar Animacion a Personaje
-			- Script 07 Player Combat
-			- Script 01 Player Control
-			- Nuevo sistema de Inputs
+		- Revisasr todos los scripts
 
 Objeto Jugador
-	- Incorporar Animaciones (Ataques, Poncho)
-	- Acciones Basicas 1 (Ataque Normal y Ataque Poncho)
-	- Acciones Basicas 2 (Ataque Aereo Normal y Ataque Aereo Poncho)
-	- Combos Basicos 1 (Ataque Doble, Ataque Cargado y Reflector)
-	- Sistema 1 (Sistema de combos, cancelar ataques)
-
-------------------------------------------------------------------------------------
-TO DO AFTER:
-
-Objeto Jugador
-	- Movimiento Avanzado (Wall Jump)
-	- Barras (Vida y Magia)
+	- Incorporar estado de carga
+	- Ajustar movimiento horizontal en terrenos irregulares
 	- Estados (Normal, Herido)
-	- Acciones Basicas 3 (Ataque en Carrera Normal y Ataque en Carrera Poncho)
+	- Barras (Vida y Magia)
+
 	

@@ -5,21 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\new\\01 - player\\01 - scripts\\scr_player_07_combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_07_combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\01 - player\\01 - scripts\\scr_player_08_hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_08_hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\UruVania Folder\\Old content\\01 - Scripts\\Scr_Player_07_Combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\01 - player\\01 - scripts\\scr_player_05_actions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_05_actions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\01 - player\\01 - scripts\\scr_player_01_controls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_01_controls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,32 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scr_Player_07_Combat.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania Folder\\Old content\\01 - Scripts\\Scr_Player_07_Combat.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\UruVania Folder\\Old content\\01 - Scripts\\Scr_Player_07_Combat.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania Folder\\Old content\\01 - Scripts\\Scr_Player_07_Combat.cs",
-              "RelativeToolTip": "..\\..\\..\\UruVania Folder\\Old content\\01 - Scripts\\Scr_Player_07_Combat.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T19:08:22.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scr_Player_08_Hitbox.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Hitbox.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Hitbox.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Hitbox.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Hitbox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T19:12:59.384Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -63,34 +24,10 @@
               "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_07_Combat.cs",
               "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_07_Combat.cs",
               "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_07_Combat.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAuwGsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowEgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T03:18:30.474Z",
+              "WhenOpened": "2025-03-15T04:21:43.67Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Scr_Player_01_Controls.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Controls.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Controls.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Controls.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Controls.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T03:18:07.698Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Scr_Player_05_Actions.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Actions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T03:18:16.18Z"
             }
           ]
         }
