@@ -12,7 +12,6 @@ Documento de Programacion
 		- Revisasr todos los scripts
 
 Objeto Jugador
-	- Incorporar estado de carga
 	- Ajustar movimiento horizontal en terrenos irregulares
 	- Estados (Normal, Herido)
 	- Barras (Vida y Magia)

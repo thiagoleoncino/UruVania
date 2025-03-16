@@ -19,6 +19,8 @@ public class Scr_Player_07_Combat : MonoBehaviour
     private const int maxCombo = 3;
 
     public bool playerCollision;
+    public bool normalAttackCharge;
+    public float chargeAmount;
 
     void Awake()
     {
@@ -50,7 +52,7 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
                 if (playerControl.button4Hold)
                 {
-                    GroundAttack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
+                    ChargeAttack("ChargeNormalAttack", "Anim_Player_10_ChargingNormal");
                     return;
                 }
 
@@ -62,7 +64,7 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
                 if (playerControl.button1Hold)
                 {
-                    GroundAttack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+                    ChargeAttack("ChargePonchoAttack", "Anim_Player_15_ChargingPoncho");
                     return;
                 }
 
@@ -120,7 +122,7 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
             if (playerControl.button4Hold)
             {
-                GroundAttack("ChargeNormalAttack", "Anim_Player_11_NormalChargeAttack", 0, 0);
+                ChargeAttack("ChargeNormalAttack", "Anim_Player_10_ChargingNormal");
                 attackCanBeCancel = false;
                 return;
             }
@@ -134,10 +136,22 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
             if (playerControl.button1Hold)
             {
-                GroundAttack("ChargePonchoAttack", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+                ChargeAttack("ChargePonchoAttack", "Anim_Player_15_ChargingPoncho");
                 attackCanBeCancel = false;
                 return;
             }
+        }
+
+        if (playerControl.button1Realase)
+        {
+            GroundAttack("ChargePonchoRealase", "Anim_Player_16_PonchoChargeAttack", 0, 0);
+            return;
+        }
+
+        if (playerControl.button4Realase)
+        {
+            GroundAttack("ChargeAttackRealase", "Anim_Player_11_NormalChargeAttack", 0, 0);
+            return;
         }
     }
 
@@ -170,6 +184,15 @@ public class Scr_Player_07_Combat : MonoBehaviour
         playerAction.actualAction = attackName;
         playerAnimation.ChangeAnimation(animationName);
         playerState.semiCancelableAction = true;
+    }
+
+    public void ChargeAttack(string attackName, string animationName)
+    {
+        actualAttack = attackName;
+        playerAction.actualAction = attackName;
+        playerAnimation.ChangeAnimation(animationName);
+        playerState.semiCancelableAction = true;
+        chargeAmount += 0.1f;
     }
 
     public void EventAttackCanBeCancel()

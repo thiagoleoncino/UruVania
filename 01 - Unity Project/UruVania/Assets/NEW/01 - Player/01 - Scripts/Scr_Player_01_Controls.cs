@@ -35,11 +35,13 @@ public class Scr_Player_01_Controls : MonoBehaviour
     public bool button1;
     public bool button1Tap;
     public bool button1Hold;
+    public bool button1Realase;
 
     [Space]
     public bool button2;
     public bool button2Tap;
     public bool button2Hold;
+    public bool button2Realase;
 
     [Space]
     public bool button3;
@@ -48,6 +50,7 @@ public class Scr_Player_01_Controls : MonoBehaviour
     public bool button4;
     public bool button4Tap;
     public bool button4Hold;
+    public bool button4Realase;
 
     [Space]
     public bool leftTrigger;
@@ -78,6 +81,7 @@ public class Scr_Player_01_Controls : MonoBehaviour
         }
 
     }
+
     void KeyboardInputs()
     {
         //NewInput();
@@ -112,13 +116,15 @@ public class Scr_Player_01_Controls : MonoBehaviour
     void NewInputs()
     {
         //Button 1 Detection (Poncho Attack)
-        TapnAndHoldButtonDetection(playerActionControls.Player_Action_Map.Input_Button_1, value => button1 = value, value => button1Tap = value, value => button1Hold = value);
+        TapAndHoldButtonDetection(playerActionControls.Player_Action_Map.Input_Button_1, value => button1 = value, value => button1Tap = value, value => button1Hold = value);
+        RealeseButtonDetection(playerActionControls.Player_Action_Map.Input_Button_1, value => button1Realase = value);
 
         //Button 3 Detection (Jump)
         PressButtonDetection(playerActionControls.Player_Action_Map.Input_Button_3, value => button3 = value);
 
         //Button 4 Detection (Normal Attack)
-        TapnAndHoldButtonDetection(playerActionControls.Player_Action_Map.Input_Button_4, value => button4 = value, value => button4Tap = value, value => button4Hold = value);
+        TapAndHoldButtonDetection(playerActionControls.Player_Action_Map.Input_Button_4, value => button4 = value, value => button4Tap = value, value => button4Hold = value);
+        RealeseButtonDetection(playerActionControls.Player_Action_Map.Input_Button_4, value => button4Realase = value);
 
         //Trigger 1
         AllButtonDetection(playerActionControls.Player_Action_Map.Input_Trigger_1, value => leftTrigger = value);
@@ -139,7 +145,7 @@ public class Scr_Player_01_Controls : MonoBehaviour
         };
     }
 
-    void TapnAndHoldButtonDetection(InputAction inputAction, Action<bool> setButtonState, Action<bool> setTapButton, Action<bool> setHoldButton)
+    void TapAndHoldButtonDetection(InputAction inputAction, Action<bool> setButtonState, Action<bool> setTapButton, Action<bool> setHoldButton)
     {
         inputAction.started += ctx => setButtonState(true);
 
@@ -150,14 +156,11 @@ public class Scr_Player_01_Controls : MonoBehaviour
                 setTapButton(true);
                 StartCoroutine(ButtonTimeout(setTapButton));
                 StartCoroutine(ButtonTimeout(setButtonState));
-
             }
             else if (ctx.interaction is HoldInteraction)
             {
                 setHoldButton(true);
-                StartCoroutine(ButtonTimeout(setHoldButton));
                 StartCoroutine(ButtonTimeout(setButtonState));
-
             }
         };
 
@@ -166,6 +169,19 @@ public class Scr_Player_01_Controls : MonoBehaviour
             setButtonState(false);
             setTapButton(false);
             setHoldButton(false);
+        };
+  
+    }
+
+    void RealeseButtonDetection(InputAction inputAction, Action<bool> setRealaseButton)
+    {
+        inputAction.canceled += ctx =>
+        {
+            if (ctx.interaction is HoldInteraction)
+            {
+                setRealaseButton(true);
+                StartCoroutine(ButtonTimeout(setRealaseButton)); // Después de un tiempo, la variable se desactiva
+            }
         };
     }
 
