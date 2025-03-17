@@ -6,13 +6,12 @@ public class Scr_Player_05_Actions : MonoBehaviour
 {
     private Scr_Player_01_Controls playerControl;
     private Scr_Player_02_States playerState;
-    private Scr_Player_03_Statistics playerStat;
+    private Scr_Player_03_Statistics playerStatistics;
     private Scr_Player_04_Physics playerPhisic;
     private Scr_Player_06_Animations playerAnimation;
     private Scr_Player_07_Combat playerCombat;
 
     // Basic Variables
-    public int totalJumps;
     public string actualAction;
     public bool rightSide;
 
@@ -23,15 +22,10 @@ public class Scr_Player_05_Actions : MonoBehaviour
     {
         playerControl = GetComponent<Scr_Player_01_Controls>();
         playerState = GetComponent<Scr_Player_02_States>();
-        playerStat = GetComponent<Scr_Player_03_Statistics>();
+        playerStatistics = GetComponent<Scr_Player_03_Statistics>();
         playerPhisic = GetComponent<Scr_Player_04_Physics>();
         playerAnimation = GetComponentInChildren<Scr_Player_06_Animations>();
         playerCombat = GetComponentInChildren<Scr_Player_07_Combat>();
-    }
-
-    void Start()
-    {
-        totalJumps = playerStat.playerJumpAmount;
     }
 
     void Update()
@@ -52,19 +46,19 @@ public class Scr_Player_05_Actions : MonoBehaviour
             if (playerState.stateGrounded)
             {
                 //Reset Jump
-                totalJumps = playerStat.playerJumpAmount;
+                playerStatistics.playerActualJumpAmount = playerStatistics.playerJumpAmount;
 
                 // Turn around
                 transform.rotation = Quaternion.Euler(0, rightSide ? 0 : 180, 0);
 
                 // Jump
-                if (playerControl.button3 && totalJumps > 0)
+                if (playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
                 {
                     actualAction = "Jump";
-                    playerPhisic.PlayerVerticalMoveFunction(playerStat.playerJumpForce);
+                    playerPhisic.PlayerVerticalMoveFunction(playerStatistics.playerJumpForce);
                     playerAnimation.ChangeAnimation("Anim_Player_04_Jump");
                     playerState.cancelableAction = true;
-                    totalJumps--;
+                    playerStatistics.playerActualJumpAmount--;
                     return; // Evita que se ejecuten otras acciones en el mismo frame
                 }
 
@@ -73,7 +67,7 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 {
                     rightSide = playerControl.directionRight;
                     actualAction = playerControl.leftTrigger ? "Run" : "Walk";
-                    float speed = playerControl.leftTrigger ? playerStat.playerRunSpeed : playerStat.playerWalkSpeed;
+                    float speed = playerControl.leftTrigger ? playerStatistics.playerRunSpeed : playerStatistics.playerWalkSpeed;
 
                     playerPhisic.PlayerHorizontalMoveFunction(rightSide ? speed : -speed);
                     playerAnimation.ChangeAnimation(playerControl.leftTrigger ? "Anim_Player_03_Run" : "Anim_Player_02_Walk");
@@ -106,13 +100,13 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 if(playerCanDoubleJump)
                 {
                     // Jump (solo se ejecuta si no estamos ya en el aire haciendo un salto)
-                    if (playerControl.button3 && totalJumps > 0)
+                    if (playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
                     {
                         actualAction = "DoubleJump";
-                        playerPhisic.PlayerVerticalMoveFunction(playerStat.playerJumpForce);
+                        playerPhisic.PlayerVerticalMoveFunction(playerStatistics.playerJumpForce);
                         playerAnimation.ChangeAnimation("Anim_Player_05_DoubleJump");
                         playerState.cancelableAction = true;
-                        totalJumps--;
+                        playerStatistics.playerActualJumpAmount--;
                         return; // Evita que se ejecuten otras acciones en el mismo frame
                     }
                 }

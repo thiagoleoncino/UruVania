@@ -5475,6 +5475,10 @@ PrefabInstance:
       value: Player_Action_Map
       objectReference: {fileID: 0}
     - target: {fileID: 2632116444264081905, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632116444264081905, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: m_NotificationBehavior
       value: 0
       objectReference: {fileID: 0}
@@ -5562,9 +5566,37 @@ PrefabInstance:
       propertyPath: totalJumps
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4991360036161301632, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: playerCanDoubleJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: playerDashSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: playerDodgeSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: playerJumpAmount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: normalAttackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: ponchoAttackDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: normalChargeAttackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: ponchoChargeAttackDamage
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7148245702538495773, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: rigidBody
@@ -5616,6 +5648,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7675947524384511452, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139817252822213253, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: currentActionState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139817252822213253, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: currentCombatState
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

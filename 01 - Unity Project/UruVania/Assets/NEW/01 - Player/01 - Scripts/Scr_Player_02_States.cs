@@ -5,13 +5,15 @@ using static Scr_Player_01_Controls;
 
 public class Scr_Player_02_States : MonoBehaviour
 {
+    //List of Ground States
     public enum GroundState
     {
         Grounded,
         Airborn
     }
 
-    public enum ActionType
+    //List of Normal Action Types
+    public enum NormalStatesType
     {
         Passive,
         Cancelable,
@@ -19,7 +21,20 @@ public class Scr_Player_02_States : MonoBehaviour
         NonCancelable
     }
 
+    //List of Combat Action Types
+    public enum CombatStatesType
+    {
+        Normal,
+        Damage
+    }
+
+    //Enum list references
+    public NormalStatesType currentActionState;
+    public CombatStatesType currentCombatState;
+    [Space]
     public GroundState currentGroundState;
+
+    //Ground states bool
     public bool stateGrounded
     {
         get => currentGroundState == GroundState.Grounded;
@@ -31,71 +46,88 @@ public class Scr_Player_02_States : MonoBehaviour
         set { if (value) currentGroundState = GroundState.Airborn; }
     }
 
-    public ActionType currentState;
-
+    //Normal states bools
     public bool passiveAction
     {
-        get => currentState == ActionType.Passive;
-        set { if (value) currentState = ActionType.Passive; }
+        get => currentActionState == NormalStatesType.Passive;
+        set { if (value) currentActionState = NormalStatesType.Passive; }
     }
     public bool cancelableAction
     {
-        get => currentState == ActionType.Cancelable;
-        set { if (value) currentState = ActionType.Cancelable; }
+        get => currentActionState == NormalStatesType.Cancelable;
+        set { if (value) currentActionState = NormalStatesType.Cancelable; }
     }
     public bool semiCancelableAction
     {
-        get => currentState == ActionType.SemiCancelable;
-        set { if (value) currentState = ActionType.SemiCancelable; }
+        get => currentActionState == NormalStatesType.SemiCancelable;
+        set { if (value) currentActionState = NormalStatesType.SemiCancelable; }
     }
     public bool noCancelableAction
     {
-        get => currentState == ActionType.NonCancelable;
-        set { if (value) currentState = ActionType.NonCancelable; }
+        get => currentActionState == NormalStatesType.NonCancelable;
+        set { if (value) currentActionState = NormalStatesType.NonCancelable; }
     }
 
+    //Combat states bools
+    public bool normalCombatAction
+    {
+        get => currentCombatState == CombatStatesType.Normal;
+        set { if (value) currentCombatState = CombatStatesType.Normal; }
+    }
+    public bool damageCombatAction
+    {
+        get => currentCombatState == CombatStatesType.Damage;
+        set { if (value) currentCombatState = CombatStatesType.Damage; }
+    }
+
+    //Ground detection variables
     private CapsuleCollider capsuleCollider;
-    [Space]
-    public LayerMask groundLayerMask;
     private Vector3 halfExtents;
+    public LayerMask groundLayerMask;
+
+    //Land bools
     public bool playerLand;
+    private bool playerIsGrounded;
+    private bool playerWasAirborn = false;
 
-    private bool wasAirborn = false;
+    // Start is called before the first frame update
+    private void Start()
+    {
+        capsuleCollider = GetComponent<CapsuleCollider>();
+    }
 
-    public bool IsGrounded() //Grounded Bool Function
+    // Update is called once per frame
+    private void Update()
+    {
+        //Update ground state bools
+        playerIsGrounded = IsGroundedFunction();
+        currentGroundState = playerIsGrounded ? GroundState.Grounded : GroundState.Airborn;
+
+        //Handle landing
+        if (stateAirborn)
+        {
+            playerWasAirborn = true;
+        }
+        if (stateGrounded && playerWasAirborn)
+        {
+            playerWasAirborn = false;
+            StartCoroutine(PlayerLandCoroutine());
+        }
+    }
+
+    //Grounded bool function
+    public bool IsGroundedFunction()
     {
         Vector3 center = new Vector3(capsuleCollider.bounds.center.x, capsuleCollider.bounds.min.y + 0.14f, capsuleCollider.bounds.center.z);
         Vector3 halfExtents = new Vector3(0.3f, 0.15f, 0f);
         return Physics.CheckBox(center, halfExtents, capsuleCollider.transform.rotation, groundLayerMask);
     }
 
-    private void Start()
+    //Player land function
+    private IEnumerator PlayerLandCoroutine()
     {
-        capsuleCollider = GetComponent<CapsuleCollider>();
-    }
-
-    private void Update()
-    {
-        stateGrounded = IsGrounded(); // Grounded
-        stateAirborn = !IsGrounded(); // Airborn
-
-        // Verificar si el estado cambia de Airborn a Grounded
-        if (stateGrounded && wasAirborn)
-        {
-            wasAirborn = false;
-            StartCoroutine(HandlePlayerLand());
-        }
-
-        if (stateAirborn)
-        {
-            wasAirborn = true;
-        }
-    }
-
-    private IEnumerator HandlePlayerLand()
-    {
-        playerLand = true;  // Activar playerLand
-        yield return new WaitForSeconds(0.1f);  // Mantenerlo activo durante 2 segundos (puedes cambiar este tiempo)
-        playerLand = false; // Desactivar playerLand después de 2 segundos
+        playerLand = true;
+        yield return new WaitForSeconds(0.1f);
+        playerLand = false;
     }
 }

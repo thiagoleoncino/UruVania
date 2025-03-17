@@ -1,11 +1,14 @@
 Actuales:
+	- Actualizar Script 05 Actions y documento de diseño
 	- Actualizando el control al Nuevo Sistema de Inputs
-	- Agregar Input, botons de ejes y diagonales
+	- Agregar Input, botones de movimiento (eje y diagonales) en el nuevo sistema
 
 ------------------------------------------------------------------------------------
 TO DO:
 	
-Pequeños bugs/mejoras
+Pequeños bugs/mejoras:
+		- Al hacer un dash y mantener Ataque o Poncho cargado, y soltar el Trigger a la mitad de la animacion, se ejecuta el ataque cargado.
+		Por ende el jugador queda intangible para los enemigos porque no llega la funcion en la animacion.
 
 Documento de Programacion
 	- Funcionamiento Jugador (Actualizar!)
@@ -13,7 +16,6 @@ Documento de Programacion
 
 Objeto Jugador
 	- Ajustar movimiento horizontal en terrenos irregulares
-	- Estados (Normal, Herido)
+	- Scr_Player_02_States + Estados (Normal, Herido)
+	- Scr_Player_03_Statistics + Estadisticas de Ataque y vida
 	- Barras (Vida y Magia)
-
-	

@@ -70,13 +70,13 @@ public class Scr_Player_07_Combat : MonoBehaviour
 
                 if (playerControl.leftTrigger && playerControl.button4)
                 {
-                    GroundAttack("NormalDashAttack", "Anim_Player_13_NormalDashAttack", 10, 0);
+                    GroundAttack("NormalDashAttack", "Anim_Player_13_NormalDashAttack", playerStat.playerDashSpeed, 0);
                     return;
                 }
 
                 if (playerControl.leftTrigger && playerControl.button1)
                 {
-                    GroundAttack("NormalDashAttack", "Anim_Player_18_Dodge", 10, 0);
+                    GroundAttack("NormalDodge", "Anim_Player_18_Dodge", playerStat.playerDodgeSpeed, 0);
                     playerCollision = true;
                     return;
                 }
