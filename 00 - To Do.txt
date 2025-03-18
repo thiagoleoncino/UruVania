@@ -7,8 +7,7 @@ Actuales:
 TO DO:
 	
 Pequeños bugs/mejoras:
-		- Al hacer un dash y mantener Ataque o Poncho cargado, y soltar el Trigger a la mitad de la animacion, se ejecuta el ataque cargado.
-		Por ende el jugador queda intangible para los enemigos porque no llega la funcion en la animacion.
+		- Al aterrizar y mantener el click + trigger y direccion, se causa una rara interaccion.
 
 Documento de Programacion
 	- Funcionamiento Jugador (Actualizar!)

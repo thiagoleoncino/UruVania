@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Scr_Player_05_Actions : MonoBehaviour
 {
+    //Scripts Variables
     private Scr_Player_01_Controls playerControl;
     private Scr_Player_02_States playerState;
     private Scr_Player_03_Statistics playerStatistics;
     private Scr_Player_04_Physics playerPhisic;
     private Scr_Player_06_Animations playerAnimation;
-    private Scr_Player_07_Combat playerCombat;
 
-    // Basic Variables
+    //Basic Variables
     public string actualAction;
+    [Space]
     public bool rightSide;
-
-    [Space] //Extra skills bools 
     public bool playerCanDoubleJump;
 
+    //Awake is the first thing to update
     void Awake()
     {
         playerControl = GetComponent<Scr_Player_01_Controls>();
@@ -25,19 +25,21 @@ public class Scr_Player_05_Actions : MonoBehaviour
         playerStatistics = GetComponent<Scr_Player_03_Statistics>();
         playerPhisic = GetComponent<Scr_Player_04_Physics>();
         playerAnimation = GetComponentInChildren<Scr_Player_06_Animations>();
-        playerCombat = GetComponentInChildren<Scr_Player_07_Combat>();
     }
 
+    //Update is called once per frame
     void Update()
     {
         //Player Land Code
         if (playerState.playerLand)
         {
-            actualAction = "Land";
-            playerAnimation.ChangeAnimation("Anim_Player_07_Land");
+            HandleActionsFunction("Land", "Anim_Player_07_Land");
             playerState.noCancelableAction = true;
-            return; // Evita que se ejecuten otras acciones en el mismo frame
+            return;
         }
+
+        //Reset State to Passive Action
+        HandleStateFunction();
 
         // Passive Actions
         if (playerState.passiveAction)
@@ -51,36 +53,31 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 // Turn around
                 transform.rotation = Quaternion.Euler(0, rightSide ? 0 : 180, 0);
 
-                // Jump
+                // Jump code
                 if (playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
                 {
-                    actualAction = "Jump";
-                    playerPhisic.PlayerVerticalMoveFunction(playerStatistics.playerJumpForce);
-                    playerAnimation.ChangeAnimation("Anim_Player_04_Jump");
-                    playerState.cancelableAction = true;
-                    playerStatistics.playerActualJumpAmount--;
-                    return; // Evita que se ejecuten otras acciones en el mismo frame
+                    HandleJumpFunction("Jump", "Anim_Player_04_Jump");
+                    return; 
                 }
 
-                // Horizontal Movement
+                // Horizontal Movement code
                 if (playerControl.directionRight || playerControl.directionLeft)
                 {
-                    rightSide = playerControl.directionRight;
-                    actualAction = playerControl.leftTrigger ? "Run" : "Walk";
-                    float speed = playerControl.leftTrigger ? playerStatistics.playerRunSpeed : playerStatistics.playerWalkSpeed;
+                    HandleActionsFunction(playerControl.leftTrigger ? "Run" : "Walk", playerControl.leftTrigger ? "Anim_Player_03_Run" : "Anim_Player_02_Walk");
 
+                    rightSide = playerControl.directionRight;
+                    float speed = playerControl.leftTrigger ? playerStatistics.playerRunSpeed : playerStatistics.playerWalkSpeed;
                     playerPhisic.PlayerHorizontalMoveFunction(rightSide ? speed : -speed);
-                    playerAnimation.ChangeAnimation(playerControl.leftTrigger ? "Anim_Player_03_Run" : "Anim_Player_02_Walk");
+
+                    return; 
                 }
 
-                // Idle
+                // Idle code
                 if (playerControl.controlIdle || (!playerControl.directionRight && !playerControl.directionLeft))
                 {
-                    actualAction = "Idle";
+                    HandleActionsFunction("Idle", "Anim_Player_01_Idle");
+
                     playerPhisic.PlayerHorizontalMoveFunction(0);
-                    playerAnimation.ChangeAnimation("Anim_Player_01_Idle");
-                    playerState.passiveAction = true;
-                    return; // Evita que continúe evaluando otras acciones
                 }
 
             }
@@ -88,31 +85,64 @@ public class Scr_Player_05_Actions : MonoBehaviour
             //Actions in the Air
             if (playerState.stateAirborn)
             {
-                // Fall
-                if (actualAction != "Jump" || actualAction != "DoubleJump" || playerAnimation.AnimationFinished("Anim_Player_04_Jump") || playerAnimation.AnimationFinished("Anim_Player_05_DoubleJump"))
+                // Fall code
+                if (actualAction != "Jump" || actualAction != "DoubleJump" )
                 {
-                    actualAction = "Fall";
-                    playerAnimation.ChangeAnimation("Anim_Player_06_Fall");
-                    playerState.passiveAction = true;
-                }
-
-
-                if(playerCanDoubleJump)
-                {
-                    // Jump (solo se ejecuta si no estamos ya en el aire haciendo un salto)
-                    if (playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
-                    {
-                        actualAction = "DoubleJump";
-                        playerPhisic.PlayerVerticalMoveFunction(playerStatistics.playerJumpForce);
-                        playerAnimation.ChangeAnimation("Anim_Player_05_DoubleJump");
-                        playerState.cancelableAction = true;
-                        playerStatistics.playerActualJumpAmount--;
-                        return; // Evita que se ejecuten otras acciones en el mismo frame
-                    }
+                    HandleActionsFunction("Fall", "Anim_Player_06_Fall");
                 }
             }
 
         }
+
+        //Double Jump Code
+        HandleExtraJumpsFunction();
+
+    }
+
+    //General action function
+    private void HandleActionsFunction(string actionName, string animationName)
+    {
+        actualAction = actionName;
+        playerAnimation.ChangeAnimationFunction(animationName);
+    }
+
+    //Jump code function
+    private void HandleJumpFunction(string actionName, string animationName)
+    {
+        HandleActionsFunction(actionName, animationName);
+
+        playerPhisic.PlayerVerticalMoveFunction(playerStatistics.playerJumpForce);
+        playerState.cancelableAction = true;
+        playerStatistics.playerActualJumpAmount--;
+    }
+
+    private void HandleExtraJumpsFunction()
+    {
+        if (playerState.passiveAction || playerAnimation.AnimationEventFunction("Anim_Player_04_Jump", 0.50f))
+        {
+            if (playerState.stateAirborn && playerCanDoubleJump && playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
+            {
+                HandleJumpFunction("DoubleJump", "Anim_Player_05_DoubleJump");
+                return;
+            }
+        }
+    }
+
+    //Change of state function
+    private void ResetStateFunction(string animationName)
+    {
+        if (playerAnimation.AnimationEventFunction(animationName, 0.95f))
+        {
+            playerState.passiveAction = true;
+        }
+    }
+
+    //All actions that need a change of state at the end
+    private void HandleStateFunction()
+    {
+        ResetStateFunction("Anim_Player_04_Jump");
+        ResetStateFunction("Anim_Player_05_DoubleJump");
+        ResetStateFunction("Anim_Player_07_Land");
     }
 
 }

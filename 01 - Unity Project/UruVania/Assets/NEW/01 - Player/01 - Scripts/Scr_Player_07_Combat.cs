@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_Player_07_Combat : MonoBehaviour
 {
+    //Scripts Variables
     private Scr_Player_01_Controls playerControl;
     private Scr_Player_02_States playerState;
     private Scr_Player_03_Statistics playerStat;
@@ -12,16 +13,21 @@ public class Scr_Player_07_Combat : MonoBehaviour
     private Scr_Player_06_Animations playerAnimation;
     private Scr_Player_08_Hitbox playerHitbox;
 
+    //Basic Variables
     public string actualAttack;
     public bool attackCanBeCancel;
 
+    [Space] //Combo Variables
     public int comboCount = 0;
     private const int maxCombo = 3;
+    private bool normalAttack1UsedInCombo;
 
+    [Space] //Attack Atributes Variables
     public bool playerCollision;
     public bool normalAttackCharge;
     public float chargeAmount;
 
+    //Awake is the first thing to update
     void Awake()
     {
         playerControl = GetComponentInParent<Scr_Player_01_Controls>();
@@ -31,170 +37,214 @@ public class Scr_Player_07_Combat : MonoBehaviour
         playerAction = GetComponentInParent<Scr_Player_05_Actions>();
         playerAnimation = GetComponent<Scr_Player_06_Animations>();
         playerHitbox = GetComponentInChildren<Scr_Player_08_Hitbox>();
-    }
 
-    private bool normalAttack1UsedInCombo = false; // Para rastrear si se usó en este combo
+        normalAttack1UsedInCombo = false;
+    }
 
     void Update()
     {
+        //Controls the Layers of Colision
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Layer_Player"), LayerMask.NameToLayer("Layer_Enemy"), playerCollision);
 
-        if (playerState.passiveAction)
+        //Reset the Attack
+        HandleStateFunction();
+
+        //Ground Attack code
+        if (playerState.passiveAction && playerState.stateGrounded)
         {
-            if (playerState.stateGrounded)
+            HandleGroundAttacksFunction(false);
+
+            //Dash and Doge code
+            if (playerControl.leftTrigger)
             {
-                if (playerControl.button4Tap)
+                //Dash
+                if(playerControl.button4)
                 {
-                    GroundAttack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0);
-                    normalAttack1UsedInCombo = true; // Marcamos que NormalAttack1 fue usado
+                    ComboAttackFunction("NormalDashAttack", "Anim_Player_13_NormalDashAttack", playerStat.playerDashSpeed, 0, false);
                     return;
-                }
-
-                if (playerControl.button4Hold)
+                } 
+                //Dodge
+                else if (playerControl.button1)
                 {
-                    ChargeAttack("ChargeNormalAttack", "Anim_Player_10_ChargingNormal");
-                    return;
-                }
-
-                if (playerControl.button1Tap)
-                {
-                    GroundAttack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
-                    return;
-                }
-
-                if (playerControl.button1Hold)
-                {
-                    ChargeAttack("ChargePonchoAttack", "Anim_Player_15_ChargingPoncho");
-                    return;
-                }
-
-                if (playerControl.leftTrigger && playerControl.button4)
-                {
-                    GroundAttack("NormalDashAttack", "Anim_Player_13_NormalDashAttack", playerStat.playerDashSpeed, 0);
-                    return;
-                }
-
-                if (playerControl.leftTrigger && playerControl.button1)
-                {
-                    GroundAttack("NormalDodge", "Anim_Player_18_Dodge", playerStat.playerDodgeSpeed, 0);
+                    ComboAttackFunction("NormalDodge", "Anim_Player_18_Dodge", playerStat.playerDodgeSpeed, 0, false);
+                    playerState.noCancelableAction = true;
                     playerCollision = true;
                     return;
                 }
             }
+
         }
 
-        if (playerState.passiveAction || playerState.cancelableAction)
+        //Charge Attacks code
+        if (playerState.semiCancelableAction && playerState.stateGrounded)
         {
-            if (playerState.stateAirborn)
+            //Realase Normal Charge Attack
+            if (playerControl.button4Realase)
             {
-                if (playerControl.button4)
-                {
-                    AirAttack("NormalJumpAttack", "Anim_Player_12_NormalJumpAttack");
-                    return;
-                }
+                ComboAttackFunction("ChargeAttackRealase", "Anim_Player_11_NormalChargeAttack", 0, 0, false);
+                return;
+            }
 
-                if (playerControl.button1)
-                {
-                    AirAttack("PonchoJumpAttack", "Anim_Player_17_PonchoJumpAttack");
-                    return;
-                }
+            //Realase Poncho Charge Attack
+            if (playerControl.button1Realase)
+            {
+                ComboAttackFunction("ChargePonchoRealase", "Anim_Player_16_PonchoChargeAttack", 0, 0, false);
+                return;
             }
         }
 
+        //Air Attacks code
+        if ((playerState.passiveAction || playerState.cancelableAction) && playerState.stateAirborn)
+        {
+            HandleAirAttacksFunction();
+        }
 
+        //Combo Attack code
         if (playerState.semiCancelableAction && attackCanBeCancel && playerHitbox.enemyDetected && comboCount < maxCombo)
         {
-            if (playerControl.button4Tap)
-            {
-                if (normalAttack1UsedInCombo) // Solo permite NormalAttack2 si NormalAttack1 fue usado en este combo
-                {
-                    GroundAttack("NormalAttack2", "Anim_Player_09_NormalAttack2", 0, 0);
-                }
-                else
-                {
-                    GroundAttack("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0); // Si no, ejecuta NormalAttack1 primero
-                    normalAttack1UsedInCombo = true;
-                }
-
-                attackCanBeCancel = false;
-                return;
-            }
-
-            if (playerControl.button4Hold)
-            {
-                ChargeAttack("ChargeNormalAttack", "Anim_Player_10_ChargingNormal");
-                attackCanBeCancel = false;
-                return;
-            }
-
-            if (playerControl.button1Tap)
-            {
-                GroundAttack("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0);
-                attackCanBeCancel = false;
-                return;
-            }
-
-            if (playerControl.button1Hold)
-            {
-                ChargeAttack("ChargePonchoAttack", "Anim_Player_15_ChargingPoncho");
-                attackCanBeCancel = false;
-                return;
-            }
+            HandleGroundAttacksFunction(true);
         }
 
-        if (playerControl.button1Realase)
-        {
-            GroundAttack("ChargePonchoRealase", "Anim_Player_16_PonchoChargeAttack", 0, 0);
-            return;
-        }
-
-        if (playerControl.button4Realase)
-        {
-            GroundAttack("ChargeAttackRealase", "Anim_Player_11_NormalChargeAttack", 0, 0);
-            return;
-        }
     }
 
-    public void GroundAttack(string attackName, string animationName, float velX, float velY)
+    //General Attack function
+    private void GeneralAttackFunction(string attackName, string animationName)
     {
         actualAttack = attackName;
         playerAction.actualAction = attackName;
-        playerAnimation.ChangeAnimation(animationName);
+        playerAnimation.ChangeAnimationFunction(animationName);
         playerState.semiCancelableAction = true;
 
-        if (playerAction.rightSide)
-        {
-            playerPhisic.PlayerHorizontalMoveFunction(velX);
-        } else { playerPhisic.PlayerHorizontalMoveFunction(-velX); }
+    }
 
+    //Combo Attacks function
+    public void ComboAttackFunction(string attackName, string animationName, float velX, float velY, bool isComboAttack)
+    {
+        GeneralAttackFunction(attackName, animationName);
+
+        playerPhisic.PlayerHorizontalMoveFunction(velX * (playerAction.rightSide ? 1 : -1));
         playerPhisic.PlayerVerticalMoveFunction(velY);
 
-        comboCount++; // Incrementa el contador de combos correctamente
-        Debug.Log("Combo Count: " + comboCount); // Depuración para ver el valor real de comboCount
+        comboCount++;
 
         if (comboCount >= maxCombo)
         {
-            attackCanBeCancel = false; // Bloquea el cancel después de 3 ataques
+            attackCanBeCancel = false;
+        }
+
+        if(isComboAttack)
+        {
+            attackCanBeCancel = false;
         }
     }
 
-    public void AirAttack(string attackName, string animationName)
+    //Handle the ground attacks
+    public void HandleGroundAttacksFunction(bool secondAttackBool)
     {
-        actualAttack = attackName;
-        playerAction.actualAction = attackName;
-        playerAnimation.ChangeAnimation(animationName);
-        playerState.semiCancelableAction = true;
+        //Normal Attack 1-2 
+        if (secondAttackBool)
+        {
+            if (playerControl.button4Tap)
+            {
+                //Attack 2
+                if (normalAttack1UsedInCombo) 
+                {
+                    ComboAttackFunction("NormalAttack2", "Anim_Player_09_NormalAttack2", 0, 0, secondAttackBool);
+                    attackCanBeCancel = false;
+                }
+
+                //Attack 1
+                else
+                {
+                    ComboAttackFunction("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0, secondAttackBool);
+                    normalAttack1UsedInCombo = true;
+                    attackCanBeCancel = false;
+                }
+
+                return;
+            }
+        }
+        else
+        {
+            //Attack 1
+            if (playerControl.button4Tap)
+            {
+                ComboAttackFunction("NormalAttack1", "Anim_Player_08_NormalAttack1", 0, 0, secondAttackBool);
+                normalAttack1UsedInCombo = true;
+                return;
+            }
+        }
+
+        //Charge the charged normal attack 
+        if (playerControl.button4Hold)
+        {
+            ComboAttackFunction("ChargeNormalAttack", "Anim_Player_10_ChargingNormal", 0, 0, secondAttackBool);
+            chargeAmount += 0.1f;
+            return;
+        }
+
+        //Basic Poncho Attack
+        if (playerControl.button1Tap)
+        {
+            ComboAttackFunction("PonchoAttack", "Anim_Player_14_PonchoAttack", 0, 0, secondAttackBool);
+            return;
+        }
+
+        //Charge the poncho normal attack
+        if (playerControl.button1Hold)
+        {
+            ComboAttackFunction("ChargePonchoAttack", "Anim_Player_15_ChargingPoncho", 0, 0, secondAttackBool);
+            chargeAmount += 0.1f;
+            return;
+        }
     }
 
-    public void ChargeAttack(string attackName, string animationName)
+    //Handle the air attacks
+    private void HandleAirAttacksFunction()
     {
-        actualAttack = attackName;
-        playerAction.actualAction = attackName;
-        playerAnimation.ChangeAnimation(animationName);
-        playerState.semiCancelableAction = true;
-        chargeAmount += 0.1f;
+        //Jumping Normal Attack
+        if (playerControl.button4)
+        {
+            GeneralAttackFunction("NormalJumpAttack", "Anim_Player_12_NormalJumpAttack");
+        }
+
+        //jumpong Poncho Attack
+        else if (playerControl.button1)
+        {
+            GeneralAttackFunction("PonchoJumpAttack", "Anim_Player_17_PonchoJumpAttack");
+        }
     }
 
+    //Resets various attack components
+    private void ResetAttackFunction(string animationName)
+    {
+        if (playerAnimation.AnimationEventFunction(animationName, 0.95f))
+        {
+            playerState.passiveAction = true;
+            attackCanBeCancel = false;
+            playerHitbox.enemyDetected = false;
+            comboCount = 0;
+            normalAttack1UsedInCombo = false; 
+        }
+    }
+
+    //All actions that need a change of state at the end
+    private void HandleStateFunction()
+    {
+        ResetAttackFunction("Anim_Player_08_NormalAttack1");
+        ResetAttackFunction("Anim_Player_09_NormalAttack2");
+        ResetAttackFunction("Anim_Player_11_NormalChargeAttack");
+        ResetAttackFunction("Anim_Player_12_NormalJumpAttack");
+        ResetAttackFunction("Anim_Player_13_NormalDashAttack");
+        ResetAttackFunction("Anim_Player_14_PonchoAttack");
+        ResetAttackFunction("Anim_Player_16_PonchoChargeAttack");
+        ResetAttackFunction("Anim_Player_17_PonchoJumpAttack");
+        ResetAttackFunction("Anim_Player_18_Dodge");
+    }
+
+    //Animator Events
+
+    //Indicates that the attack can be cancelled
     public void EventAttackCanBeCancel()
     {
         if (comboCount < maxCombo)
@@ -203,23 +253,9 @@ public class Scr_Player_07_Combat : MonoBehaviour
         }
     }
 
-    public void EventFinishAttack()
-    {
-        playerState.passiveAction = true;
-        attackCanBeCancel = false;
-        playerHitbox.enemyDetected = false;
-        comboCount = 0; // Reinicia el contador cuando termina la animación
-        normalAttack1UsedInCombo = false; // Reinicia el estado de NormalAttack1 en el combo
-    }
-
-    public void EventDisableCollision()
-    {
-        playerCollision = true;
-    }
-
+    //Indicates that collisions are enabled
     public void EventActivateCollision()
     {
         playerCollision = false;
     }
-
 }
