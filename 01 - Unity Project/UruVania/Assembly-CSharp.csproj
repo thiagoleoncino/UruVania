@@ -88,7 +88,6 @@
     <Compile Include="Assets\OLD\09 - Audio\Scr_Audio_Destroy.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_08_Hitbox.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_2\Scr_Enemy_2.cs" />
-    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_07_Combat.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_1\Scr_Enemy_1_Detect.cs" />
     <Compile Include="Assets\OLD\07 - Effects\Scripts\Scr_Hit_Effect.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Follow_Manager.cs" />
@@ -104,10 +103,12 @@
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3_Proyectile.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_1\Scr_Enemy_1.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Animations.cs" />
+    <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_07_Combat.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Plataforma.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4_Detect_2.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Check_Point.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4.cs" />
+    <Compile Include="Assets\NEW\Enemigo Prueba\Scripts\Scr_Enemy_Hit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

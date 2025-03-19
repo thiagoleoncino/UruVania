@@ -1,17 +1,23 @@
 Actuales:
-	- Actualizar Script 05 Actions y documento de diseño
-	- Actualizando el control al Nuevo Sistema de Inputs
-	- Agregar Input, botones de movimiento (eje y diagonales) en el nuevo sistema
-
+	- Restructura de Scripts
+		* Añadir #region//REGION//---------
+	- Actualizar documento de diseño.
+		* Nuevos nombres / estructura
+	- Crear nuevo script para el paso de los datos de Jugador - Enemigo (Scr_Player_09_Interactions)
+	- Añadir animaciones y codigo de daño al player
+	- Agregar soporte a control
+	- Enemy Demo, crear documentacion y codigo
 ------------------------------------------------------------------------------------
 TO DO:
 	
 Pequeños bugs/mejoras:
 		- Al aterrizar y mantener el click + trigger y direccion, se causa una rara interaccion.
+		- Al Esquivar si se termina la invbulnerabilidad dentro de un objeto, quedamos atrapados en el objeto
 
 Documento de Programacion
 	- Funcionamiento Jugador (Actualizar!)
 		- Revisasr todos los scripts
+		- Agregar funcion de diccionario en Scr_Player_06_Animation
 
 Objeto Jugador
 	- Ajustar movimiento horizontal en terrenos irregulares

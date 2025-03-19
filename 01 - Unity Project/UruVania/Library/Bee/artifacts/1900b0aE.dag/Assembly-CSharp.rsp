@@ -364,6 +364,7 @@
 "Assets/NEW/01 - Player/01 - Scripts/Scr_Player_07_Combat.cs"
 "Assets/NEW/01 - Player/01 - Scripts/Scr_Player_08_Hitbox.cs"
 "Assets/NEW/01 - Player/Player_Input_Manager.cs"
+"Assets/NEW/Enemigo Prueba/Scripts/Scr_Enemy_Hit.cs"
 "Assets/OLD/01b - Niveles/Script/Scr_Check_Point.cs"
 "Assets/OLD/01b - Niveles/Script/Scr_Plataforma.cs"
 "Assets/OLD/01b - Niveles/Script/Scr_Scene_Manager.cs"

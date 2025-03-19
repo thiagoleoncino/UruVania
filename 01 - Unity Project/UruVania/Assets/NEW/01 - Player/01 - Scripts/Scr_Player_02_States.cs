@@ -25,6 +25,7 @@ public class Scr_Player_02_States : MonoBehaviour
     public enum CombatStatesType
     {
         Normal,
+        Invulnerable,
         Damage
     }
 
@@ -74,6 +75,11 @@ public class Scr_Player_02_States : MonoBehaviour
         get => currentCombatState == CombatStatesType.Normal;
         set { if (value) currentCombatState = CombatStatesType.Normal; }
     }
+    public bool invulnerableCombatAction
+    {
+        get => currentCombatState == CombatStatesType.Invulnerable;
+        set { if (value) currentCombatState = CombatStatesType.Invulnerable; }
+    }
     public bool damageCombatAction
     {
         get => currentCombatState == CombatStatesType.Damage;
@@ -89,6 +95,8 @@ public class Scr_Player_02_States : MonoBehaviour
     public bool playerLand;
     private bool playerIsGrounded;
     private bool playerWasAirborn = false;
+
+    private bool newCollisionState;
 
     // Start is called before the first frame update
     private void Start()
@@ -113,6 +121,9 @@ public class Scr_Player_02_States : MonoBehaviour
             playerWasAirborn = false;
             StartCoroutine(PlayerLandCoroutine());
         }
+
+        //Handle enemy collision
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Layer_Player"), LayerMask.NameToLayer("Layer_Enemy"), invulnerableCombatAction);
     }
 
     //Grounded bool function
@@ -130,4 +141,5 @@ public class Scr_Player_02_States : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         playerLand = false;
     }
+
 }

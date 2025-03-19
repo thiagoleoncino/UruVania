@@ -33,7 +33,7 @@ public class Scr_Player_05_Actions : MonoBehaviour
         //Player Land Code
         if (playerState.playerLand)
         {
-            HandleActionsFunction("Land", "Anim_Player_07_Land");
+            HandleActionsFunction("Land", "Animation_Land");
             playerState.noCancelableAction = true;
             return;
         }
@@ -56,14 +56,14 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 // Jump code
                 if (playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
                 {
-                    HandleJumpFunction("Jump", "Anim_Player_04_Jump");
+                    HandleJumpFunction("Jump", "Animation_Jump");
                     return; 
                 }
 
                 // Horizontal Movement code
                 if (playerControl.directionRight || playerControl.directionLeft)
                 {
-                    HandleActionsFunction(playerControl.leftTrigger ? "Run" : "Walk", playerControl.leftTrigger ? "Anim_Player_03_Run" : "Anim_Player_02_Walk");
+                    HandleActionsFunction(playerControl.leftTrigger ? "Run" : "Walk", playerControl.leftTrigger ? "Animation_Run" : "Animation_Walk");
 
                     rightSide = playerControl.directionRight;
                     float speed = playerControl.leftTrigger ? playerStatistics.playerRunSpeed : playerStatistics.playerWalkSpeed;
@@ -75,7 +75,7 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 // Idle code
                 if (playerControl.controlIdle || (!playerControl.directionRight && !playerControl.directionLeft))
                 {
-                    HandleActionsFunction("Idle", "Anim_Player_01_Idle");
+                    HandleActionsFunction("Idle", "Animation_Idle");
 
                     playerPhisic.PlayerHorizontalMoveFunction(0);
                 }
@@ -88,7 +88,7 @@ public class Scr_Player_05_Actions : MonoBehaviour
                 // Fall code
                 if (actualAction != "Jump" || actualAction != "DoubleJump" )
                 {
-                    HandleActionsFunction("Fall", "Anim_Player_06_Fall");
+                    HandleActionsFunction("Fall", "Animation_Fall");
                 }
             }
 
@@ -118,11 +118,11 @@ public class Scr_Player_05_Actions : MonoBehaviour
 
     private void HandleExtraJumpsFunction()
     {
-        if (playerState.passiveAction || playerAnimation.AnimationEventFunction("Anim_Player_04_Jump", 0.50f))
+        if (playerState.passiveAction || playerAnimation.AnimationEventFunction("Animation_Jump", 0.50f))
         {
             if (playerState.stateAirborn && playerCanDoubleJump && playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
             {
-                HandleJumpFunction("DoubleJump", "Anim_Player_05_DoubleJump");
+                HandleJumpFunction("DoubleJump", "Animation_DoubleJump");
                 return;
             }
         }
@@ -140,9 +140,9 @@ public class Scr_Player_05_Actions : MonoBehaviour
     //All actions that need a change of state at the end
     private void HandleStateFunction()
     {
-        ResetStateFunction("Anim_Player_04_Jump");
-        ResetStateFunction("Anim_Player_05_DoubleJump");
-        ResetStateFunction("Anim_Player_07_Land");
+        ResetStateFunction("Animation_Jump");
+        ResetStateFunction("Animation_DoubleJump");
+        ResetStateFunction("Animation_Land");
     }
 
 }
