@@ -30,4 +30,8 @@ public class Scr_Player_04_Physics : MonoBehaviour
         rigidBody.velocity = new Vector3(rigidBody.velocity.x, speed, rigidBody.velocity.z);
     } 
 
+    public void PlayerStopMovementFunction()
+    {
+        rigidBody.velocity = new Vector3(0, 0, rigidBody.velocity.z);
+    }
 }

@@ -1,26 +1,25 @@
 Actuales:
-	- Restructura de Scripts
-		* Añadir #region//REGION//---------
-	- Actualizar documento de diseño.
-		* Nuevos nombres / estructura
-	- Crear nuevo script para el paso de los datos de Jugador - Enemigo (Scr_Player_09_Interactions)
-	- Añadir animaciones y codigo de daño al player
-	- Agregar soporte a control
-	- Enemy Demo, crear documentacion y codigo
-------------------------------------------------------------------------------------
+
 TO DO:
-	
+	- Restructurar y separar Scripts por su funcion
+        - Agregar soporte a control
+	- Enemy Demo, crear documentacion y codigo
+
 Pequeños bugs/mejoras:
 		- Al aterrizar y mantener el click + trigger y direccion, se causa una rara interaccion.
 		- Al Esquivar si se termina la invbulnerabilidad dentro de un objeto, quedamos atrapados en el objeto
 
 Documento de Programacion
-	- Funcionamiento Jugador (Actualizar!)
-		- Revisasr todos los scripts
-		- Agregar funcion de diccionario en Scr_Player_06_Animation
+	- Actualizar documento de diseño.
+		* Nuevos nombres / estructura
 
 Objeto Jugador
+	- Restructura de Scripts
+		* Añadir #region//REGION//---------
 	- Ajustar movimiento horizontal en terrenos irregulares
-	- Scr_Player_02_States + Estados (Normal, Herido)
+	- Scr_Player_05_Actions hay que crear mas funciones para que quede mas limpio
+	- Scr_Player_02_States + Estados (Normal, Herido) code
 	- Scr_Player_03_Statistics + Estadisticas de Ataque y vida
 	- Barras (Vida y Magia)
+	- Añadir animaciones y codigo de daño al player
+	- Crear nuevo script para el paso de los datos de Jugador - Enemigo (Scr_Player_09_Interactions)

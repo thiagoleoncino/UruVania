@@ -20,5 +20,7 @@ Anim_Player_16_PonchoChargeAttack
 Anim_Player_17_PonchoJumpAttack 
 Anim_Player_18_Dodge 
 
+Anim_Player_19_GroundHit
+Anim_Player_20_AirHit
 -----------------------------------------------------------------------
 

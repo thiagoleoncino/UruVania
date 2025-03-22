@@ -5195,6 +5195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1279113073}
     m_Modifications:
+    - target: {fileID: 1358238879691941655, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1548852421938897148, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: maxChargeTime
       value: 1
@@ -5274,6 +5278,10 @@ PrefabInstance:
     - target: {fileID: 2632116444264081905, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_ActionName
       value: Player_Action_Map/Input_Trigger_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843849816376898915, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: rightSide
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952533232732368591, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: selectedController
@@ -5418,6 +5426,10 @@ PrefabInstance:
     - target: {fileID: 8139817252822213253, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: currentCombatState
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139817252822213253, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: groundLayerMask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1548852421938897148, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
