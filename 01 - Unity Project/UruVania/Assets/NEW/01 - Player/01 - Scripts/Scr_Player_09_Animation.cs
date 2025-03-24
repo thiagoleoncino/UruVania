@@ -5,16 +5,16 @@ using UnityEngine.Playables;
 
 public class Scr_Player_09_Animation : MonoBehaviour
 {
-    // Scripts Variables
+    //Scripts Variables
     private Scr_Player_02_State playerState;
     private Scr_Player_03_Statistics playerStatistics;
     private Scr_Player_06_Combat playerCombat;
 
-    // Componentes
+    //Components Variables
     private Animator animator;
     public string actualAnimation;
 
-    // Diccionario de Animaciones
+    //Animation Dictionary
     private Dictionary<string, string> animationDictionary = new Dictionary<string, string>
     {
         { "Animation_Idle", "Anim_Player_01_Idle" },
@@ -42,7 +42,7 @@ public class Scr_Player_09_Animation : MonoBehaviour
         { "Animation_AirHit", "Anim_Player_20_AirHit" }
     };
 
-
+    //Awake is the first thing to update
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -51,7 +51,7 @@ public class Scr_Player_09_Animation : MonoBehaviour
         playerCombat = GetComponentInParent<Scr_Player_06_Combat>();
     }
 
-    // Cambiar Animación usando el Diccionario
+    // Change Animation using Dictionary
     public void ChangeAnimationFunction(string animationKey)
     {
         if (!animationDictionary.TryGetValue(animationKey, out string newAnimation))
@@ -66,7 +66,7 @@ public class Scr_Player_09_Animation : MonoBehaviour
         actualAnimation = newAnimation;
     }
 
-    // Comprobar si una animación ha alcanzado cierto punto
+    // Check if an animation has reached a certain point
     public bool AnimationEventFunction(string animationKey, float animationEventTime)
     {
         if (!animationDictionary.TryGetValue(animationKey, out string animationName))
@@ -79,10 +79,11 @@ public class Scr_Player_09_Animation : MonoBehaviour
                animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= animationEventTime;
     }
 
-    // Eventos del Animator
+    #region //Animator Events
+
     public void EventAttackCanBeCanceled()
     {
-        if (playerStatistics.playerActualComboCount < playerStatistics.playerMaxCombo)
+        if (playerCombat.playerActualComboCount < playerCombat.playerMaxCombo)
         {
             playerCombat.attackCanBeCancel = true;
         }
@@ -97,4 +98,6 @@ public class Scr_Player_09_Animation : MonoBehaviour
     {
         playerState.normalCombatAction = true;
     }
+
+    #endregion
 }

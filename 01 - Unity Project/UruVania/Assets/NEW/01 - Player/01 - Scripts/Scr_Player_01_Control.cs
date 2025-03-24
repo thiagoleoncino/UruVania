@@ -8,9 +8,9 @@ public class Scr_Player_01_Control : MonoBehaviour
 {
     //Reference to the Input Asset
     public Player_Input_Manager playerActionControls;
-    
+
     //Bools for buttons inputs and buttons functions
-    #region 
+    #region //All Buttons Bools//
     [Space]
     public bool controlIdle;
 

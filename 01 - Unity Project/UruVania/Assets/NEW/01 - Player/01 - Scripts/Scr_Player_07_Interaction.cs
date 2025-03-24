@@ -4,62 +4,72 @@ using UnityEngine;
 
 public class Scr_Player_07_Interaction : MonoBehaviour
 {
-    //Variables
-    private int enemyLayer;
-    private string actualAnimation;
-
-    public bool playerIsHit;
-    public int hitCount;
-
+    //Script Variables
     private Scr_Player_02_State playerState;
-    private Scr_Player_04_Physics playerPhysics; 
+    private Scr_Player_04_Physics playerPhysics;
+    private Scr_Player_08_Action playerAction;
     private Scr_Player_09_Animation playerAnimations;
+    private Scr_Player_11_HurtBox playerHurtBox;
 
+    //Basic Variables
+    public float baseKnockbackX;
+    public float baseKnockbackY;
 
+    //Awake is the first thing to update
     void Awake()
     {
-        enemyLayer = LayerMask.NameToLayer("Layer_Enemy");
-        playerState = GetComponentInParent<Scr_Player_02_State>();
-        playerPhysics = GetComponentInParent<Scr_Player_04_Physics>();
-        playerAnimations = GetComponent<Scr_Player_09_Animation>();
+        playerState = GetComponent<Scr_Player_02_State>();
+        playerPhysics = GetComponent<Scr_Player_04_Physics>();
+        playerAction = GetComponent<Scr_Player_08_Action>();
+        playerAnimations = GetComponentInChildren<Scr_Player_09_Animation>();
+        playerHurtBox = transform.GetChild(0).GetChild(1).GetComponent< Scr_Player_11_HurtBox>();
     }
 
-    private void Update()
+    //Update is called once per frame
+    void Update()
     {
-        if (playerState.stateGrounded && playerIsHit)
-        {
-            playerAnimations.ChangeAnimationFunction("Animation_GroundHit");
-            playerState.noCancelableAction = true;
-        }
-
-        if (playerState.stateAirborn && playerIsHit)
-        {
-            playerAnimations.ChangeAnimationFunction("Animation_AirHit");
-            playerState.noCancelableAction = true;
-        }
-
-        if (playerAnimations.AnimationEventFunction(("Animation_GroundHit"), 0.95f) 
-            || playerAnimations.AnimationEventFunction(("Animation_AirHit"), 0.95f))
-        {
-            playerIsHit = false;
-            playerState.passiveAction = true;
-        }
+        //Handle enemy collision
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Layer_Player"), LayerMask.NameToLayer("Layer_Enemy"), playerState.invulnerableCombatAction);
     }
 
-    void OnTriggerEnter(Collider other)
+    //Damage Interaction Function
+    public void HandleHitInteraction()
     {
-        if (other.gameObject.layer == enemyLayer)
+        if (playerHurtBox.playerIsHit)
         {
-            playerIsHit = true;
-            hitCount++; // Incrementa el contador de golpes
-            playerPhysics.PlayerHorizontalMoveFunction(-5f);
-
-            // Si el enemigo ya está en la animación de daño, reiniciar la animación
-            if (actualAnimation == "Animation_GroundHit")
+            //Ground Hit
+            if (playerState.stateGrounded)
             {
-                playerAnimations.ChangeAnimationFunction("Animation_GroundHit");
+                playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
+                {
+                    Name = "Ground Hit",
+                    Animation = "Animation_GroundHit",
+                    State1 = (action) => playerState.noCancelableAction = true,
+                    State2 = (action) => playerState.damageCombatAction = true,
+                    VelocityX = -baseKnockbackX,
+                });
+            }
+
+            //Air Hit
+            if (playerState.stateAirborn)
+            {
+                playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
+                {
+                    Name = "Air Hit",
+                    Animation = "Animation_AirHit",
+                    State1 = (action) => playerState.noCancelableAction = true,
+                    State2 = (action) => playerState.damageCombatAction = true,
+                    VelocityX = -baseKnockbackX,
+                    VelocityY = baseKnockbackY
+                });
             }
         }
+    }
+
+    //Resets various interaction components
+    public void ResetInteractionFunction()
+    {
+        playerState.normalCombatAction = true;
     }
 
 }

@@ -96,8 +96,6 @@ public class Scr_Player_02_State : MonoBehaviour
     private bool playerIsGrounded;
     private bool playerWasAirborn = false;
 
-    private bool newCollisionState;
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -122,8 +120,6 @@ public class Scr_Player_02_State : MonoBehaviour
             StartCoroutine(PlayerLandCoroutine());
         }
 
-        //Handle enemy collision
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Layer_Player"), LayerMask.NameToLayer("Layer_Enemy"), invulnerableCombatAction);
     }
 
     //Grounded bool function

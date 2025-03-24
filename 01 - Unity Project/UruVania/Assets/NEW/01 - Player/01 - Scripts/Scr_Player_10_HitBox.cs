@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Scr_Player_10_HitBox : MonoBehaviour
 {
+    //Components Variables
     public bool enemyDetected = false;
     private int enemyLayer;
-
-    void Start()
+   
+    //Awake is the first thing to update
+    void Awake()
     {
-        enemyLayer = LayerMask.NameToLayer("Layer_Enemy"); // Obtiene el índice de la capa
+        enemyLayer = LayerMask.NameToLayer("Layer_Enemy");
     }
 
+    //Detection when entering the trigger
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == enemyLayer)

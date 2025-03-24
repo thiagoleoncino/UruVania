@@ -5,10 +5,10 @@ using UnityEngine.Playables;
 
 public class Scr_Player_04_Physics : MonoBehaviour
 {
-    //Components
+    //Components Variables
     private Rigidbody rigidBody;
 
-    //Scripts
+    //Scripts Variables
     private Scr_Player_03_Statistics playerStatistics;
 
     //Awake is the first thing to update
@@ -28,8 +28,9 @@ public class Scr_Player_04_Physics : MonoBehaviour
     public void PlayerVerticalMoveFunction(float speed)
     {
         rigidBody.velocity = new Vector3(rigidBody.velocity.x, speed, rigidBody.velocity.z);
-    } 
+    }
 
+    //Stop movement function
     public void PlayerStopMovementFunction()
     {
         rigidBody.velocity = new Vector3(0, 0, rigidBody.velocity.z);

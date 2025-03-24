@@ -5195,6 +5195,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1279113073}
     m_Modifications:
+    - target: {fileID: 91743152349900122, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: baseKnockbackX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 91743152349900122, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: baseKnockbackY
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 705642289323245920, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1358238879691941655, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5327,6 +5339,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6488195083212215904, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: playerMaxChargeAttackTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6986362689155634078, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: playerDashSpeed
       value: 10
@@ -5409,6 +5425,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7675947524384511452, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675947524384511454, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961632764901455603, guid: aedc1d92c6d90b541886f865c533b4d0, type: 3}

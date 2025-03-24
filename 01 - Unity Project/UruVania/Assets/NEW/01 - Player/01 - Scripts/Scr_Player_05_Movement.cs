@@ -34,7 +34,7 @@ public class Scr_Player_05_Movement : MonoBehaviour
             {
                 Name = "Land",
                 Animation = "Animation_Land",
-                State = (action) => playerState.noCancelableAction = true
+                State1 = (action) => playerState.noCancelableAction = true
             });
 
             playerStatistics.playerActualJumpAmount = playerStatistics.playerJumpAmount;
@@ -107,7 +107,7 @@ public class Scr_Player_05_Movement : MonoBehaviour
         //Double Jump
         if (playerState.passiveAction || playerAnimation.AnimationEventFunction("Animation_Jump", 0.50f))
         {
-            if (playerState.stateAirborn && playerCanDoubleJump && playerControl.button3 && playerStatistics.playerActualJumpAmount > 0)
+            if (playerState.stateAirborn && playerControl.button3 && playerCanDoubleJump && playerStatistics.playerActualJumpAmount > 0)
             {
                 HandleJumpFunction("DoubleJump", "Animation_DoubleJump");
                 return;
@@ -122,7 +122,7 @@ public class Scr_Player_05_Movement : MonoBehaviour
         {
             Name = actionName,
             Animation = animationName,
-            State = (action) => playerState.cancelableAction = true,
+            State1 = (action) => playerState.cancelableAction = true,
             VelocityY = playerStatistics.playerJumpForce
         });
 

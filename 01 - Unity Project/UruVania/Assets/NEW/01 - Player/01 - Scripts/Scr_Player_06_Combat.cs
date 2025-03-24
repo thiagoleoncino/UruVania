@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class Scr_Player_06_Combat : MonoBehaviour
 {
@@ -14,9 +15,13 @@ public class Scr_Player_06_Combat : MonoBehaviour
 
     //Basic Variables
     public bool attackCanBeCancel;
-
-    private bool normalAttack1UsedInCombo = false;
+    private bool normalAttack1UsedInCombo;
+    public int playerMaxCombo = 3; //The maximum amount of attack we can perfomr in a combo
+    public int playerActualComboCount = 0;
+    [Space]
     public bool chargingAttack;
+    public float playerMaxChargeAttackTime; //The maximum amount of time a charge attack can be charge
+    public float playerActualChargeAmount = 0;
 
     private bool canPerformGroundAction;
     private bool canPerformAirAction;
@@ -41,18 +46,16 @@ public class Scr_Player_06_Combat : MonoBehaviour
         playerState = GetComponent<Scr_Player_02_State>();
         playerStatistics = GetComponent<Scr_Player_03_Statistics>();
         playerPhysics = GetComponent<Scr_Player_04_Physics>();
-        playerHitbox = transform.GetChild(0).GetChild(0).GetComponent<Scr_Player_10_HitBox>();
         playerAction = GetComponentInChildren<Scr_Player_08_Action>();
-
+        playerHitbox = transform.GetChild(0).GetChild(0).GetComponent<Scr_Player_10_HitBox>();
     }
 
+    //Update is called once per frame
     void Update()
     {
         //Track Player State
         DetectPlayerStateFunction();
     }
-
-    #region//General Attack functions//---------------------------------------------------------------------------
 
     //Player State function
     private void DetectPlayerStateFunction()
@@ -71,42 +74,25 @@ public class Scr_Player_06_Combat : MonoBehaviour
         {
             Name = attack.Name,
             Animation = attack.Animation,
-            State = (action) => playerState.semiCancelableAction = true,
+            State1 = (action) => playerState.semiCancelableAction = true,
             VelocityX = attack.VelocityX,
             VelocityY = attack.VelocityY
         });
 
-        // Manejar el combo
-        if (playerStatistics.playerActualComboCount < playerStatistics.playerMaxCombo)
+        if (playerActualComboCount < playerMaxCombo)
         {
-            playerStatistics.playerActualComboCount++;
+            playerActualComboCount++;
         }
 
-        // Control de cancelación de ataques
-        attackCanBeCancel = !attack.CanCombo && playerStatistics.playerActualComboCount < playerStatistics.playerMaxCombo;
+        attackCanBeCancel = !attack.CanCombo && playerActualComboCount < playerMaxCombo;
 
     }
-
-    //Resets various attack components
-    public void ResetAttackFunction()
-    {
-        attackCanBeCancel = false;
-        playerHitbox.enemyDetected = false;
-        normalAttack1UsedInCombo = false;
-
-        playerStatistics.playerActualComboCount = 0;
-        playerStatistics.playerActualChargeAmount = 0;
-    }
-
-    #endregion
-
-    #region//Attack Functions//-----------------------------------------------------------------------------------
 
     //Handle the ground attacks
     public void HandleGroundAttacksFunction()
     {
         //Combo verification
-        bool canCombo = playerState.semiCancelableAction && attackCanBeCancel && playerHitbox.enemyDetected && playerStatistics.playerActualComboCount < playerStatistics.playerMaxCombo;
+        bool canCombo = playerState.semiCancelableAction && attackCanBeCancel && playerHitbox.enemyDetected && playerActualComboCount < playerMaxCombo;
 
         //Ground Normal Attack
         if (playerControl.button4Tap)
@@ -162,7 +148,7 @@ public class Scr_Player_06_Combat : MonoBehaviour
                 {
                     Name = "NormalDashAttack",
                     Animation = "Animation_NormalDashAttack",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                     VelocityX = playerStatistics.playerDashSpeed,
                 });
                 return;
@@ -174,8 +160,8 @@ public class Scr_Player_06_Combat : MonoBehaviour
                 {
                     Name = "NormalDodge",
                     Animation = "Animation_Dodge",
+                    State1 = (action) => playerState.noCancelableAction = true,
                     VelocityX = playerStatistics.playerDodgeSpeed,
-                    State = (action) => playerState.noCancelableAction = true,
                 });
                 return;
             }
@@ -187,30 +173,30 @@ public class Scr_Player_06_Combat : MonoBehaviour
     {
         //Builds up the charge if the current attack is a charged attack
         bool isCharging = playerAction.actualAction == "ChargePonchoAttack" || playerAction.actualAction == "ChargeNormalAttack";
-        if (isCharging) playerStatistics.playerActualChargeAmount += Time.deltaTime;
+        if (isCharging) playerActualChargeAmount += Time.deltaTime;
 
         if (canPerformGroundAction)
         {
             // Start normal attack charge
-            if (playerControl.button4Hold && playerStatistics.playerActualChargeAmount < playerStatistics.playerMaxChargeAttackTime)
+            if (playerControl.button4Hold && playerActualChargeAmount < playerMaxChargeAttackTime)
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
                 {
                     Name = "ChargeNormalAttack",
                     Animation = "Animation_ChargingNormal",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                 });
                 return;
             }
 
             // Start poncho attack charge
-            if (playerControl.button1Hold && playerStatistics.playerActualChargeAmount < playerStatistics.playerMaxChargeAttackTime)
+            if (playerControl.button1Hold && playerActualChargeAmount < playerMaxChargeAttackTime)
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
                 {
                     Name = "ChargePonchoAttack",
                     Animation = "Animation_ChargingPoncho",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                 });
                 return;
             }
@@ -223,25 +209,25 @@ public class Scr_Player_06_Combat : MonoBehaviour
         if (canReleaseCharge)
         {
             //Release normal charged attack
-            if (playerControl.button4Realase || (playerControl.button4Hold && playerStatistics.playerActualChargeAmount > playerStatistics.playerMaxChargeAttackTime))
+            if (playerControl.button4Realase || (playerControl.button4Hold && playerActualChargeAmount > playerMaxChargeAttackTime))
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
                 {
                     Name = "ChargeAttackRealase",
                     Animation = "Animation_NormalChargeAttack",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                 });
                 return;
             }
 
             //Release poncho charged attack
-            if (playerControl.button1Realase || (playerControl.button1Hold && playerStatistics.playerActualChargeAmount > playerStatistics.playerMaxChargeAttackTime))
+            if (playerControl.button1Realase || (playerControl.button1Hold && playerActualChargeAmount > playerMaxChargeAttackTime))
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
                 {
                     Name = "ChargePonchoRealase",
                     Animation = "Animation_PonchoChargeAttack",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                 });
                 return;
             }
@@ -260,7 +246,7 @@ public class Scr_Player_06_Combat : MonoBehaviour
                 {
                     Name = "NormalJumpAttack",
                     Animation = "Animation_NormalJumpAttack",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                 });
                 return;
             }
@@ -272,13 +258,21 @@ public class Scr_Player_06_Combat : MonoBehaviour
                 {
                     Name = "PonchoJumpAttack",
                     Animation = "Animation_PonchoJumpAttack",
-                    State = (action) => playerState.semiCancelableAction = true,
+                    State1 = (action) => playerState.semiCancelableAction = true,
                 });
                 return;
             }
         }
     }
+    
+    //Resets various attack components
+    public void ResetAttackFunction()
+    {
+        attackCanBeCancel = false;
+        normalAttack1UsedInCombo = false;
+        playerHitbox.enemyDetected = false;
 
-    #endregion
-
+        playerActualComboCount = 0;
+        playerActualChargeAmount = 0;
+    }
 }

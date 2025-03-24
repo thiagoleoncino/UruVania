@@ -16,13 +16,6 @@ public class Scr_Player_03_Statistics : MonoBehaviour
     public float playerDashSpeed; //The distance traveled in the dash
     public float playerDodgeSpeed; //The distance traveled in the dodge
 
-    [Header("Combat Stats")]
-    [Space]
-    public int playerMaxCombo = 3; //The maximum amount of attack we can perfomr in a combo
-    public int playerActualComboCount = 0;
-    public float playerMaxChargeAttackTime; //The maximum amount of time a charge attack can be charge
-    public float playerActualChargeAmount;
-
     [Header("Meter Stats")]
     [Space]
     public float playerTotalLife = 100; //Total amount of life
