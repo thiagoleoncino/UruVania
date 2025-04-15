@@ -78,6 +78,7 @@
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_06_Combat.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_04_Physics.cs" />
+    <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_04_Detection.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Damage.cs" />
     <Compile Include="Assets\OLD\05 - Items\Player Items\Scripts\Scr_Item_Axe.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_09_Animation.cs" />
@@ -91,6 +92,8 @@
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_08_Action.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_1\Scr_Enemy_1_Detect.cs" />
     <Compile Include="Assets\OLD\07 - Effects\Scripts\Scr_Hit_Effect.cs" />
+    <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_02_Animation.cs" />
+    <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_01_BasicFunctions.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Follow_Manager.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Scene_Manager.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Zone_Change.cs" />
@@ -105,7 +108,7 @@
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3_Proyectile.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_1\Scr_Enemy_1.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Animations.cs" />
-    <Compile Include="Assets\NEW\Enemigo Prueba\Scripts\Scr_Enemy_Hit.cs" />
+    <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_03_Hurtbox.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Plataforma.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_10_HitBox.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4_Detect_2.cs" />

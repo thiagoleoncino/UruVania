@@ -7,6 +7,10 @@ public class Scr_Player_10_HitBox : MonoBehaviour
     //Components Variables
     public bool enemyDetected = false;
     private int enemyLayer;
+    
+    public float hitboxKnocbackX;
+    public float hitboxKnocbackY;
+    public float hitboxDamage;
    
     //Awake is the first thing to update
     void Awake()

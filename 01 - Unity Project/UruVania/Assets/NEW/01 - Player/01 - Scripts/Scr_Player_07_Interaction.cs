@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Scr_Enemy_01_BasicFunctions;
 
 public class Scr_Player_07_Interaction : MonoBehaviour
 {
     //Script Variables
     private Scr_Player_02_State playerState;
+    private Scr_Player_03_Statistics playerStatistics;
     private Scr_Player_04_Physics playerPhysics;
     private Scr_Player_08_Action playerAction;
     private Scr_Player_09_Animation playerAnimations;
     private Scr_Player_11_HurtBox playerHurtBox;
 
     //Basic Variables
-    public float baseKnockbackX;
-    public float baseKnockbackY;
+    public float actualDamage;
+    public float actualKnockbackX;
+    public float actualKnockbackY;
 
     //Awake is the first thing to update
     void Awake()
     {
         playerState = GetComponent<Scr_Player_02_State>();
+        playerStatistics = GetComponent<Scr_Player_03_Statistics>();
         playerPhysics = GetComponent<Scr_Player_04_Physics>();
         playerAction = GetComponent<Scr_Player_08_Action>();
         playerAnimations = GetComponentInChildren<Scr_Player_09_Animation>();
@@ -32,12 +36,18 @@ public class Scr_Player_07_Interaction : MonoBehaviour
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Layer_Player"), LayerMask.NameToLayer("Layer_Enemy"), playerState.invulnerableCombatAction);
     }
 
-    //Damage Interaction Function
+    //Hit Interaction Function
     public void HandleHitInteraction()
     {
         if (playerHurtBox.playerIsHit)
         {
-            //Ground Hit
+            // Aplica daño y knockback
+            playerStatistics.playerActualLife -= playerHurtBox.attackDamage;
+            actualDamage = playerHurtBox.attackDamage;
+            actualKnockbackX = playerHurtBox.knockbackX;
+            actualKnockbackY = playerHurtBox.knockbackY;
+
+            // Ejecutar animación correspondiente
             if (playerState.stateGrounded)
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
@@ -46,11 +56,9 @@ public class Scr_Player_07_Interaction : MonoBehaviour
                     Animation = "Animation_GroundHit",
                     State1 = (action) => playerState.noCancelableAction = true,
                     State2 = (action) => playerState.damageCombatAction = true,
-                    VelocityX = -baseKnockbackX,
+                    VelocityX = -actualKnockbackX,
                 });
             }
-
-            //Air Hit
             if (playerState.stateAirborn)
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
@@ -59,10 +67,16 @@ public class Scr_Player_07_Interaction : MonoBehaviour
                     Animation = "Animation_AirHit",
                     State1 = (action) => playerState.noCancelableAction = true,
                     State2 = (action) => playerState.damageCombatAction = true,
-                    VelocityX = -baseKnockbackX,
-                    VelocityY = baseKnockbackY
+                    VelocityX = -actualKnockbackX,
+                    VelocityY = actualKnockbackY
                 });
             }
+
+            // Reset data
+            playerHurtBox.playerIsHit = false;
+            playerHurtBox.attackDamage = 0;
+            playerHurtBox.knockbackX = 0;
+            playerHurtBox.knockbackY = 0;
         }
     }
 

@@ -36,6 +36,10 @@ public class Scr_Player_06_Combat : MonoBehaviour
         public float VelocityX;
         public float VelocityY;
 
+        public float Damage;
+        public float KnocbackX;
+        public float KnocbackY;
+
         public bool CanCombo;
     }
 
@@ -79,6 +83,11 @@ public class Scr_Player_06_Combat : MonoBehaviour
             VelocityY = attack.VelocityY
         });
 
+        playerHitbox.hitboxDamage = attack.Damage;
+        playerHitbox.hitboxKnocbackX = attack.KnocbackX;
+        playerHitbox.hitboxKnocbackY = attack.KnocbackY;
+
+
         if (playerActualComboCount < playerMaxCombo)
         {
             playerActualComboCount++;
@@ -116,12 +125,16 @@ public class Scr_Player_06_Combat : MonoBehaviour
                     Name = "NormalAttack1",
                     Animation = "Animation_NormalAttack1",
                     CanCombo = true,
+
+                    Damage = 2,
+                    KnocbackX = 5,
+                    KnocbackY = 5,
                 });
 
                 normalAttack1UsedInCombo = true;
             }
 
-            return;
+            return; 
         }
 
         //Ground Poncho Attack
@@ -132,6 +145,10 @@ public class Scr_Player_06_Combat : MonoBehaviour
                 Name = "PonchoAttack",
                 Animation = "Animation_PonchoAttack",
                 CanCombo = true,
+
+                Damage = 5,
+                KnocbackX = 10,
+                KnocbackY = 10,
             });
         }
     }
@@ -139,7 +156,7 @@ public class Scr_Player_06_Combat : MonoBehaviour
     //Handle the attacks that use movment
     public void HandleMovementAttackFunction()
     {
-        if (canPerformGroundAction && playerControl.leftTrigger)
+        if (canPerformGroundAction && playerControl.rightTrigger)
         {
             //Dash
             if (playerControl.button4)

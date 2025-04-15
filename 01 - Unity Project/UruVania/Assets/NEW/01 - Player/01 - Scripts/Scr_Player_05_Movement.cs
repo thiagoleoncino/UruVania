@@ -55,9 +55,9 @@ public class Scr_Player_05_Movement : MonoBehaviour
             {
                 playerAction.HandleActionFunction(new Scr_Player_08_Action.ActionData
                 {
-                    Name = playerControl.leftTrigger ? "Run" : "Walk",
-                    Animation = playerControl.leftTrigger ? "Animation_Run" : "Animation_Walk",
-                    VelocityX = playerControl.leftTrigger ? playerStatistics.playerRunSpeed : playerStatistics.playerWalkSpeed,
+                    Name = playerControl.rightTrigger ? "Run" : "Walk",
+                    Animation = playerControl.rightTrigger ? "Animation_Run" : "Animation_Walk",
+                    VelocityX = playerControl.rightTrigger ? playerStatistics.playerRunSpeed : playerStatistics.playerWalkSpeed,
                 });
                 return;
             }

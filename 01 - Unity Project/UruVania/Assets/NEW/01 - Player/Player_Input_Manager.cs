@@ -105,11 +105,33 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0c3b0889-79b0-4706-83ce-28f98c9e8dd9"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Button_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""e5c7dafc-9fcf-4887-bbaf-b8c22ba905f5"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
+                    ""action"": ""Input_Button_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc73dabe-d8c8-48ac-b1dc-087a2433ffd8"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
                     ""action"": ""Input_Button_2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -127,6 +149,17 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""24a290c0-610e-4f05-9693-a937062be0e8"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Button_4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""543994e9-9442-4df6-bd1f-986890a3b5d9"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -138,8 +171,19 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e9af3df8-8f40-4962-bab4-fdaad6dae2e5"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Button_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ed76b1f3-5807-4400-a705-65dbfe62ee3f"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -149,8 +193,19 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d2dbea10-a44e-4d07-8d28-5510045e3e5d"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Trigger_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""526ba21f-d67d-41fd-b8d6-8c57f0fbb5da"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -159,7 +214,18 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": """",
+                    ""id"": ""f2a7c986-ffc5-471b-b7c3-ba20cde05d53"",
+                    ""path"": ""<HID::Core (Plus) Wired Controller>/button6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Trigger_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector Keyboard"",
                     ""id"": ""24b247ca-6624-4c01-83c3-9691c5baa032"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -212,6 +278,61 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
                     ""action"": ""Input_Normal_Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector Control"",
+                    ""id"": ""a28b0e43-5316-477b-a6f9-56c1626a6643"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Input_Normal_Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f94fb36d-8345-41d8-a639-f2121587f108"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Normal_Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""cc97c1ce-e67f-4bff-987e-95985101acf3"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Normal_Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""38e0c5c8-5a10-4e27-a49e-8af4b912ec75"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Normal_Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""93f1f77c-5a03-420a-bec2-15900ac33c88"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Input_Normal_Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -223,6 +344,17 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Control"",
+            ""bindingGroup"": ""Control"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Joystick>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -397,6 +529,15 @@ public partial class @Player_Input_Manager: IInputActionCollection2, IDisposable
         {
             if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
             return asset.controlSchemes[m_KeyboardSchemeIndex];
+        }
+    }
+    private int m_ControlSchemeIndex = -1;
+    public InputControlScheme ControlScheme
+    {
+        get
+        {
+            if (m_ControlSchemeIndex == -1) m_ControlSchemeIndex = asset.FindControlSchemeIndex("Control");
+            return asset.controlSchemes[m_ControlSchemeIndex];
         }
     }
     public interface IPlayer_Action_MapActions
