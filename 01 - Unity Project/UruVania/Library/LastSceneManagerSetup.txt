@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/NEW/Prueba.unity
+- path: Assets/NEW/Montevideo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

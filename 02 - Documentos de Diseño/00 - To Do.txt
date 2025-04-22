@@ -1,0 +1,26 @@
+Actuales:
+	- Enemy Demo documentacion y codigo (Diseño, Acciones y IA)
+	- Enemy 1 Basico
+        - Enemy 1 Avanzado
+
+TO DO:
+        - Agregar soporte a control 
+		* Verificar que funcione con varios contorles 
+		* No poder usar el control y el teclado a la vez
+
+	- Jugador
+		* Barras de vida (Codigo y UI)
+		* Ajustes esenciales del combate (Estado de guardia y desarme)
+		* Ajustar movimiento horizontal en terrenos irregulares
+		* Bugs
+
+Pequeños bugs/mejoras:
+	- Al Esquivar si se termina la invbulnerabilidad dentro de un objeto, quedamos atrapados en el objeto
+	- Al soltar el ataque en medio del Dash se ejecuta el ataque cargado
+	- Al atacar, si la hitbox enuevle por completo al enemigo, el knocback se activara como si lo 	estuvieramos atacnado de atras
+
+Actualizar en Documentos:
+	- Se agregaron las bindings de los controles en Input Action 
+	- Correr, Dash y Dodge es con rightTrigger
+	- Player Scr11Hurtbox
+	- Player Scr06Combat
