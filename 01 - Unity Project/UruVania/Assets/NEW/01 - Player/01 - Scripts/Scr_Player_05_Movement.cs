@@ -10,6 +10,7 @@ public class Scr_Player_05_Movement : MonoBehaviour
     private Scr_Player_03_Statistics playerStatistics;
     private Scr_Player_08_Action playerAction;
     private Scr_Player_09_Animation playerAnimation;
+    public Transform spriteTransform;
 
     //Basic Variables
     public bool playerCanDoubleJump;
@@ -48,7 +49,7 @@ public class Scr_Player_05_Movement : MonoBehaviour
         if (playerState.passiveAction && playerState.stateGrounded)
         {
             // Turn around
-            transform.rotation = Quaternion.Euler(0, playerAction.rightSide ? 0 : 180, 0);
+            //spriteTransform.rotation = Quaternion.Euler(0, playerAction.rightSide ? 0 : 180, 0);
 
             // Horizontal Movement code
             if (playerControl.directionRight || playerControl.directionLeft)

@@ -17,11 +17,12 @@ public class Scr_Player_04_Physics : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         playerStatistics = GetComponent<Scr_Player_03_Statistics>();
     }
-   
+
     //Horizontal movement function
     public void PlayerHorizontalMoveFunction(float speed)
     {
-        rigidBody.velocity = new Vector3(speed, rigidBody.velocity.y, rigidBody.velocity.z);
+        Vector3 direction = transform.right * speed;
+        rigidBody.velocity = new Vector3(direction.x, rigidBody.velocity.y, direction.z);
     }
 
     //Jump movement function
@@ -33,6 +34,6 @@ public class Scr_Player_04_Physics : MonoBehaviour
     //Stop movement function
     public void PlayerStopMovementFunction()
     {
-        rigidBody.velocity = new Vector3(0, 0, rigidBody.velocity.z);
+        rigidBody.velocity = new Vector3(0, 0, 0);
     }
 }

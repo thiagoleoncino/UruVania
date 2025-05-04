@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIsHit: 0
+  attackDamage: 0
+  knockbackX: 0
+  knockbackY: 0
 --- !u!1 &6431640016450518201
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDetected: 0
+  hitboxKnocbackX: 0
+  hitboxKnocbackY: 0
+  hitboxDamage: 0
 --- !u!1 &6738958315374001116
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +475,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2632116444264081905
 MonoBehaviour:
@@ -605,6 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf46e225a10a8048939b7c3004085f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteTransform: {fileID: 1701602235054211956}
   playerCanDoubleJump: 0
 --- !u!114 &6488195083212215904
 MonoBehaviour:
@@ -636,8 +643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749a3861d0978d545b9e73481de028e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseKnockbackX: 0
-  baseKnockbackY: 0
+  actualDamage: 0
+  actualKnockbackX: 0
+  actualKnockbackY: 0
 --- !u!114 &2843849816376898915
 MonoBehaviour:
   m_ObjectHideFlags: 0

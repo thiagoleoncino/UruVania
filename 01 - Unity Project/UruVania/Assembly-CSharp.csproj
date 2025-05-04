@@ -96,6 +96,7 @@
     <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_01_BasicFunctions.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Follow_Manager.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Scene_Manager.cs" />
+    <Compile Include="Assets\NEW\Scr_ChangeDirection.cs" />
     <Compile Include="Assets\OLD\08 - Camera\Scr_Zone_Change.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_01_Control.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Audio.cs" />

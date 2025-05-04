@@ -14,6 +14,13 @@ TO DO:
 		* Ajustar movimiento horizontal en terrenos irregulares
 		* Bugs
 
+	- Camara y movimiento
+		*Nuevo script de camara
+		*Programar rotacion de jugador y movimiento horizontal
+		*Programar rotacion de camara
+		*Agregar colliders para la camara
+
+
 Pequeños bugs/mejoras:
 	- Al Esquivar si se termina la invbulnerabilidad dentro de un objeto, quedamos atrapados en el objeto
 	- Al soltar el ataque en medio del Dash se ejecuta el ataque cargado
@@ -24,3 +31,4 @@ Actualizar en Documentos:
 	- Correr, Dash y Dodge es con rightTrigger
 	- Player Scr11Hurtbox
 	- Player Scr06Combat
+	- Player Scr04Pyshics - Ahora el personaje se mueve dependiendo de la rotacion

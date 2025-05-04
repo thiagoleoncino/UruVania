@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/NEW/Montevideo.unity
+- path: Assets/NEW/CamaraMVDEO.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
