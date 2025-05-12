@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\new\\scr_changedirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\scr_changedirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\01 - player\\01 - scripts\\scr_player_05_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_05_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\old\\08 - camera\\scr_camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\old\\08 - camera\\scr_camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\old\\08 - camera\\scr_follow_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\old\\08 - camera\\scr_follow_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\01 - player\\01 - scripts\\scr_player_08_action.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_08_action.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\01 - player\\01 - scripts\\scr_player_04_physics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_04_physics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\path-creator-master\\assets\\pathcreator\\examples\\scripts\\pathfollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\path-creator-master\\assets\\pathcreator\\examples\\scripts\\pathfollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,80 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scr_Camara.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\08 - Camera\\Scr_Camara.cs",
-              "RelativeDocumentMoniker": "Assets\\OLD\\08 - Camera\\Scr_Camara.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\08 - Camera\\Scr_Camara.cs",
-              "RelativeToolTip": "Assets\\OLD\\08 - Camera\\Scr_Camara.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABlAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PathFollower.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Path-Creator-master\\Assets\\PathCreator\\Examples\\Scripts\\PathFollower.cs",
+              "RelativeDocumentMoniker": "Assets\\Path-Creator-master\\Assets\\PathCreator\\Examples\\Scripts\\PathFollower.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Path-Creator-master\\Assets\\PathCreator\\Examples\\Scripts\\PathFollower.cs",
+              "RelativeToolTip": "Assets\\Path-Creator-master\\Assets\\PathCreator\\Examples\\Scripts\\PathFollower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:57:48.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Scr_Follow_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\08 - Camera\\Scr_Follow_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\OLD\\08 - Camera\\Scr_Follow_Manager.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\08 - Camera\\Scr_Follow_Manager.cs",
-              "RelativeToolTip": "Assets\\OLD\\08 - Camera\\Scr_Follow_Manager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T16:56:05.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Scr_ChangeDirection.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Scr_ChangeDirection.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\Scr_ChangeDirection.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Scr_ChangeDirection.cs",
-              "RelativeToolTip": "Assets\\NEW\\Scr_ChangeDirection.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAkwMkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T21:43:55.118Z",
+              "WhenOpened": "2025-05-12T22:58:09.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Scr_Player_04_Physics.cs",
               "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
               "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
               "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
               "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T21:10:17.13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Scr_Player_08_Action.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAABRwGUAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T21:11:20.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scr_Player_05_Movement.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwDMAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T21:10:35.905Z"
+              "WhenOpened": "2025-05-12T19:46:23.33Z",
+              "EditorCaption": ""
             }
           ]
         }

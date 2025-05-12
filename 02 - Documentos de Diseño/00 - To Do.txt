@@ -31,4 +31,4 @@ Actualizar en Documentos:
 	- Correr, Dash y Dodge es con rightTrigger
 	- Player Scr11Hurtbox
 	- Player Scr06Combat
-	- Player Scr04Pyshics - Ahora el personaje se mueve dependiendo de la rotacion
+	- Player Scr04Pyshics - Ahora el personaje se mueve sobre un camino

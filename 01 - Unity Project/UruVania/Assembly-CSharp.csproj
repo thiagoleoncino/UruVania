@@ -78,6 +78,7 @@
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_06_Combat.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_04_Physics.cs" />
+    <Compile Include="Assets\NEW\TriggerPathVisualizer.cs" />
     <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_04_Detection.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Damage.cs" />
     <Compile Include="Assets\OLD\05 - Items\Player Items\Scripts\Scr_Item_Axe.cs" />
@@ -113,9 +114,21 @@
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Plataforma.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_10_HitBox.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4_Detect_2.cs" />
+    <Compile Include="Assets\NEW\Direction2.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Check_Point.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_11_HurtBox.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4.cs" />
+    <Compile Include="Assets\NEW\Scr_PathFollower.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\CylinderMeshCreator.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Path-Creator-master\ProjectSettings\ProjectVersion.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -840,6 +853,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{E999E64F-D8C7-FECB-54F2-377E585FF45A}</Project>
+      <Name>PathCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{CCB2F6D9-013F-9C02-D2D0-0B3C62B69005}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
