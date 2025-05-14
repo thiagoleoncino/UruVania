@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\new\\scr_pathfollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\scr_pathfollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\new\\01 - player\\01 - scripts\\scr_player_04_physics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\01 - player\\01 - scripts\\scr_player_04_physics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\triggerpathvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\triggerpathvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\new\\direction2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\direction2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\new\\scr_changedirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\new\\scr_changedirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,52 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Scr_PathFollower.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Scr_PathFollower.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\Scr_PathFollower.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Scr_PathFollower.cs",
-              "RelativeToolTip": "Assets\\NEW\\Scr_PathFollower.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Title": "Scr_ChangeDirection.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Scr_ChangeDirection.cs",
+              "RelativeDocumentMoniker": "Assets\\NEW\\Scr_ChangeDirection.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Scr_ChangeDirection.cs",
+              "RelativeToolTip": "Assets\\NEW\\Scr_ChangeDirection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T22:27:24.355Z",
+              "WhenOpened": "2025-05-13T19:10:16.441Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scr_Player_04_Physics.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T19:46:23.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TriggerPathVisualizer.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\TriggerPathVisualizer.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\TriggerPathVisualizer.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\TriggerPathVisualizer.cs",
-              "RelativeToolTip": "Assets\\NEW\\TriggerPathVisualizer.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAAuwNUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T19:31:08.091Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Direction2.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Direction2.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\Direction2.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\Direction2.cs",
-              "RelativeToolTip": "Assets\\NEW\\Direction2.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAANUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T21:51:27.133Z"
             }
           ]
         }

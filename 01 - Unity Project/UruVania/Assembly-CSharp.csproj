@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\OLD\05 - Items\Scr_Orb.cs" />
     <Compile Include="Assets\OLD\04 - Objects\Scripts\Scr_Drop_Item.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_02_State.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_06_Combat.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_04_Physics.cs" />
-    <Compile Include="Assets\NEW\TriggerPathVisualizer.cs" />
     <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_04_Detection.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Damage.cs" />
     <Compile Include="Assets\OLD\05 - Items\Player Items\Scripts\Scr_Item_Axe.cs" />
@@ -89,6 +89,7 @@
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Magic.cs" />
     <Compile Include="Assets\OLD\06 - Bosses\Scr_Boss_Life.cs" />
     <Compile Include="Assets\OLD\09 - Audio\Scr_Audio_Destroy.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_2\Scr_Enemy_2.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_08_Action.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_1\Scr_Enemy_1_Detect.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\OLD\08 - Camera\Scr_Zone_Change.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_01_Control.cs" />
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Audio.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
     <Compile Include="Assets\OLD\06 - Bosses\Boss_1\Scr_Boss_1.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_07_Interaction.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_3\Scr_Enemy_3_Detect.cs" />
@@ -112,20 +114,15 @@
     <Compile Include="Assets\OLD\02 - Player\01 - Scripts\Scr_Player_Animations.cs" />
     <Compile Include="Assets\NEW\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_03_Hurtbox.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Plataforma.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_10_HitBox.cs" />
     <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4_Detect_2.cs" />
-    <Compile Include="Assets\NEW\Direction2.cs" />
     <Compile Include="Assets\OLD\01b - Niveles\Script\Scr_Check_Point.cs" />
     <Compile Include="Assets\NEW\01 - Player\01 - Scripts\Scr_Player_11_HurtBox.cs" />
-    <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4.cs" />
-    <Compile Include="Assets\NEW\Scr_PathFollower.cs" />
-    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
-    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
-    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
-    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
-    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\CylinderMeshCreator.cs" />
     <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
+    <Compile Include="Assets\OLD\03 - Tnemies\Enemy_4\Scr_Enemy_4.cs" />
+    <Compile Include="Assets\Path-Creator-master\Assets\PathCreator\Examples\Scripts\CylinderMeshCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Path-Creator-master\ProjectSettings\ProjectVersion.txt" />

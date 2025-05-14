@@ -1,46 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Scr_ChangeDirection : MonoBehaviour
 {
-    public float Direction1; // Izquierda a derecha
-    public float Direction2; // Derecha a izquierda
-    [Space]
-    public bool changeSpriteDirection;
-    public float SpriteDirection1;
-    public float SpriteDirection2;
-    [Space]
-    public bool changeCameraDirection;
-    [Space]
+    [Header("Verde")]
     public Vector3 cameraDirection1;
     public Vector3 cameraRotation1;
     [Space]
+    [Header("Rojo")]
     public Vector3 cameraDirection2;
     public Vector3 cameraRotation2;
 
-    private Dictionary<GameObject, float> lastDotResults = new Dictionary<GameObject, float>();
-    private Dictionary<GameObject, InterpolationData> interpolationTargets = new Dictionary<GameObject, InterpolationData>();
+    [Space]
+    [Header("Rotación del Sprite (Y)")]
+    public float spriteRotation1; // Verde
+    public float spriteRotation2; // Rojo
 
     private Transform triggerTransform;
     private Vector3 localLineStart;
     private Vector3 localLineEnd;
 
-    private class InterpolationData
-    {
-        public Transform sprite;
-        public Transform cameraDisplay;
-        public Quaternion targetSpriteRotation;
-        public Vector3 targetCameraPosition;
-        public Quaternion targetCameraRotation;
-    }
+    private Transform playerCameraDisplay;
+    private Transform playerSprites;
+
+    private bool playerInside = false;
+    private bool isFinishingTransition = false;
+
+    private Vector3 finalTargetPos;
+    private Quaternion finalTargetRot;
+    private float finalTargetYRot; // Para Player_Sprites
+
+    [Space]
+    public float rotationSpeed = 20f;
 
     private void Start()
     {
         triggerTransform = transform;
 
-        BoxCollider box = GetComponent<Collider>() as BoxCollider;
-        if (box != null)
+        if (GetComponent<Collider>() is BoxCollider box)
         {
             Vector3 size = box.size;
             localLineStart = new Vector3(0, 0, -size.z * 0.5f);
@@ -48,155 +44,115 @@ public class Scr_ChangeDirection : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+
+        Transform player = other.transform;
+        playerCameraDisplay = player.Find("Camera Player Display");
+        playerSprites = player.Find("Player_Sprites");
+
+        playerInside = true;
+        isFinishingTransition = false;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (playerCameraDisplay == null || playerSprites == null) return;
 
         Vector3 worldLineStart = triggerTransform.TransformPoint(localLineStart);
         Vector3 worldLineEnd = triggerTransform.TransformPoint(localLineEnd);
         Vector3 playerPos = other.transform.position;
 
         Vector3 lineDir = (worldLineEnd - worldLineStart).normalized;
-        Vector3 toPlayer = playerPos - worldLineStart;
+        float totalLength = Vector3.Distance(worldLineStart, worldLineEnd);
+        float projection = Vector3.Dot(playerPos - worldLineStart, lineDir);
+        float t = Mathf.Clamp01(projection / totalLength);
 
-        float crossZ = lineDir.x * toPlayer.z - lineDir.z * toPlayer.x;
+        finalTargetPos = Vector3.Lerp(cameraDirection1, cameraDirection2, t);
+        finalTargetRot = Quaternion.Slerp(Quaternion.Euler(cameraRotation1), Quaternion.Euler(cameraRotation2), t);
+        finalTargetYRot = Mathf.LerpAngle(spriteRotation1, spriteRotation2, t);
 
-        if (lastDotResults.TryGetValue(other.gameObject, out float lastCross))
-        {
-            if (lastCross * crossZ < 0) // Cambió de lado
-            {
-                float currentY = other.transform.eulerAngles.y;
-
-                if (Mathf.Abs(Mathf.DeltaAngle(currentY, Direction1)) < 1f)
-                {
-                    SetYRotation(other.gameObject, Direction2);
-
-                    InterpolationData data = GetOrCreateInterpolationData(other);
-
-                    if (changeSpriteDirection && data.sprite != null)
-                        data.targetSpriteRotation = Quaternion.Euler(0, SpriteDirection2, 0);
-
-                    if (changeCameraDirection && data.cameraDisplay != null)
-                    {
-                        data.targetCameraPosition = cameraDirection2;
-                        data.targetCameraRotation = Quaternion.Euler(cameraRotation2);
-                    }
-                }
-                else if (Mathf.Abs(Mathf.DeltaAngle(currentY, Direction2)) < 1f)
-                {
-                    SetYRotation(other.gameObject, Direction1);
-
-                    InterpolationData data = GetOrCreateInterpolationData(other);
-
-                    if (changeSpriteDirection && data.sprite != null)
-                        data.targetSpriteRotation = Quaternion.Euler(0, SpriteDirection1, 0);
-
-                    if (changeCameraDirection && data.cameraDisplay != null)
-                    {
-                        data.targetCameraPosition = cameraDirection1;
-                        data.targetCameraRotation = Quaternion.Euler(cameraRotation1);
-                    }
-                }
-
-                lastDotResults[other.gameObject] = crossZ + 0.01f * Mathf.Sign(crossZ);
-            }
-            else
-            {
-                lastDotResults[other.gameObject] = crossZ;
-            }
-        }
-        else
-        {
-            lastDotResults.Add(other.gameObject, crossZ);
-        }
-    }
-
-    private InterpolationData GetOrCreateInterpolationData(Collider other)
-    {
-        if (!interpolationTargets.TryGetValue(other.gameObject, out var data))
-        {
-            data = new InterpolationData();
-            data.sprite = other.transform.Find("Player_Sprites");
-            data.cameraDisplay = other.transform.Find("Camera Player Display");
-
-            if (data.sprite != null)
-                data.targetSpriteRotation = data.sprite.localRotation;
-            if (data.cameraDisplay != null)
-            {
-                data.targetCameraPosition = data.cameraDisplay.localPosition;
-                data.targetCameraRotation = data.cameraDisplay.localRotation;
-            }
-
-            interpolationTargets[other.gameObject] = data;
-        }
-        return data;
+        playerInside = false;
+        isFinishingTransition = true;
     }
 
     private void LateUpdate()
     {
-        foreach (var kvp in interpolationTargets)
+        if (playerCameraDisplay == null || playerSprites == null) return;
+
+        if (playerInside)
         {
-            InterpolationData data = kvp.Value;
+            Vector3 worldLineStart = triggerTransform.TransformPoint(localLineStart);
+            Vector3 worldLineEnd = triggerTransform.TransformPoint(localLineEnd);
 
-            if (changeSpriteDirection && data.sprite != null)
-            {
-                data.sprite.localRotation = Quaternion.Lerp(data.sprite.localRotation, data.targetSpriteRotation, Time.deltaTime * 5f);
-            }
+            Vector3 playerPos = playerCameraDisplay.parent.position;
 
-            if (changeCameraDirection && data.cameraDisplay != null)
-            {
-                data.cameraDisplay.localPosition = Vector3.Lerp(data.cameraDisplay.localPosition, data.targetCameraPosition, Time.deltaTime * 5f);
-                data.cameraDisplay.localRotation = Quaternion.Lerp(data.cameraDisplay.localRotation, data.targetCameraRotation, Time.deltaTime * 5f);
-            }
+            Vector3 lineDir = (worldLineEnd - worldLineStart).normalized;
+            float totalLength = Vector3.Distance(worldLineStart, worldLineEnd);
+            float projection = Vector3.Dot(playerPos - worldLineStart, lineDir);
+            float t = Mathf.Clamp01(projection / totalLength);
+
+            Vector3 targetPos = Vector3.Lerp(cameraDirection1, cameraDirection2, t);
+            Quaternion targetRot = Quaternion.Slerp(Quaternion.Euler(cameraRotation1), Quaternion.Euler(cameraRotation2), t);
+            float targetYRot = Mathf.LerpAngle(spriteRotation1, spriteRotation2, t);
+
+            playerCameraDisplay.localPosition = Vector3.Lerp(playerCameraDisplay.localPosition, targetPos, Time.deltaTime * 5f);
+            playerCameraDisplay.localRotation = Quaternion.Slerp(playerCameraDisplay.localRotation, targetRot, Time.deltaTime * rotationSpeed);
+
+            Vector3 currentSpriteEuler = playerSprites.localEulerAngles;
+            currentSpriteEuler.y = Mathf.LerpAngle(currentSpriteEuler.y, targetYRot, Time.deltaTime * rotationSpeed);
+            playerSprites.localEulerAngles = currentSpriteEuler;
         }
-    }
-
-    private void SetYRotation(GameObject target, float yRotation)
-    {
-        Vector3 euler = target.transform.localEulerAngles;
-        euler.y = yRotation;
-        target.transform.localEulerAngles = euler;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else if (isFinishingTransition)
         {
-            lastDotResults.Remove(other.gameObject);
-            interpolationTargets.Remove(other.gameObject);
+            playerCameraDisplay.localPosition = Vector3.Lerp(playerCameraDisplay.localPosition, finalTargetPos, Time.deltaTime * 5f);
+            playerCameraDisplay.localRotation = Quaternion.Slerp(playerCameraDisplay.localRotation, finalTargetRot, Time.deltaTime * rotationSpeed);
+
+            Vector3 currentSpriteEuler = playerSprites.localEulerAngles;
+            currentSpriteEuler.y = Mathf.LerpAngle(currentSpriteEuler.y, finalTargetYRot, Time.deltaTime * rotationSpeed);
+            playerSprites.localEulerAngles = currentSpriteEuler;
+
+            if (Vector3.Distance(playerCameraDisplay.localPosition, finalTargetPos) < 0.01f &&
+                Quaternion.Angle(playerCameraDisplay.localRotation, finalTargetRot) < 0.5f &&
+                Mathf.Abs(Mathf.DeltaAngle(playerSprites.localEulerAngles.y, finalTargetYRot)) < 0.5f)
+            {
+                playerCameraDisplay.localPosition = finalTargetPos;
+                playerCameraDisplay.localRotation = finalTargetRot;
+
+                Vector3 finalSpriteEuler = playerSprites.localEulerAngles;
+                finalSpriteEuler.y = finalTargetYRot;
+                playerSprites.localEulerAngles = finalSpriteEuler;
+
+                isFinishingTransition = false;
+            }
         }
     }
 
     private void OnDrawGizmos()
     {
         Collider col = GetComponent<Collider>();
-        if (col == null) return;
-
-        Vector3 center = col.bounds.center;
-
-        BoxCollider box = col as BoxCollider;
-        if (box != null)
+        if (col is BoxCollider box)
         {
-            Vector3 size = box.size;
             Transform tf = transform;
+            Vector3 size = box.size;
+            Vector3 center = box.center;
 
-            Vector3 start = tf.TransformPoint(new Vector3(0, 0, -size.z * 0.5f));
-            Vector3 end = tf.TransformPoint(new Vector3(0, 0, size.z * 0.5f));
+            Vector3 localStart = new Vector3(0, 0, -size.z * 0.5f);
+            Vector3 localEnd = new Vector3(0, 0, size.z * 0.5f);
+
+            Vector3 worldStart = tf.TransformPoint(center + localStart);
+            Vector3 worldEnd = tf.TransformPoint(center + localEnd);
 
             Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(start, end);
-            Gizmos.DrawSphere(start, 0.05f);
-            Gizmos.DrawSphere(end, 0.05f);
+            Gizmos.DrawLine(worldStart, worldEnd);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(worldStart, 0.1f);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(worldEnd, 0.1f);
         }
-
-        Gizmos.color = Color.green;
-        Vector3 dir1 = Quaternion.Euler(0, Direction1 + 90f, 0) * Vector3.forward;
-        Gizmos.DrawLine(center, center + dir1 * 2f);
-        Gizmos.DrawSphere(center + dir1 * 2f, 0.05f);
-
-        Gizmos.color = Color.red;
-        Vector3 dir2 = Quaternion.Euler(0, Direction2 + 270f, 0) * Vector3.forward;
-        Gizmos.DrawLine(center, center + dir2 * 2f);
-        Gizmos.DrawSphere(center + dir2 * 2f, 0.05f);
     }
 }
