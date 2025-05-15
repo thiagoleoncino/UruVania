@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/NEW/CamaraMVDEO.unity
+- path: Assets/00 - Scenes/CamaraMVDEO.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

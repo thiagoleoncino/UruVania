@@ -337,10 +337,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Path-Creator-master/Assets/PathCreator/Core/Editor/Helper/MouseUtility.cs"
-"Assets/Path-Creator-master/Assets/PathCreator/Core/Editor/Helper/PathHandle.cs"
-"Assets/Path-Creator-master/Assets/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs"
-"Assets/Path-Creator-master/Assets/PathCreator/Core/Editor/PathEditor.cs"
+"Assets/Packages/Path-Creator-master/Assets/PathCreator/Core/Editor/Helper/MouseUtility.cs"
+"Assets/Packages/Path-Creator-master/Assets/PathCreator/Core/Editor/Helper/PathHandle.cs"
+"Assets/Packages/Path-Creator-master/Assets/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs"
+"Assets/Packages/Path-Creator-master/Assets/PathCreator/Core/Editor/PathEditor.cs"
 -langversion:9.0
 
 /deterministic
