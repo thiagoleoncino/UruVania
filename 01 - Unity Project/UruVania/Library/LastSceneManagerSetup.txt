@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/00 - Scenes/CamaraMVDEO.unity
+- path: Assets/00 - Scenes/01 - Tutorial - El Sauce.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

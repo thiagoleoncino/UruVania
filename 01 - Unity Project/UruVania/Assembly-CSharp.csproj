@@ -62,14 +62,16 @@
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_05_Movement.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_03_Statistics.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_06_Combat.cs" />
+    <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_12_Camara.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_04_Physics.cs" />
     <Compile Include="Assets\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_04_Detection.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_09_Animation.cs" />
     <Compile Include="Assets\Packages\Path-Creator-master\Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_08_Action.cs" />
+    <Compile Include="Assets\03 - NPC\01 - Enemies\01 - Basic Enemies\Scr_Enemy_B1_GurisCorre.cs" />
     <Compile Include="Assets\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_02_Animation.cs" />
     <Compile Include="Assets\03 - NPC\01 - Enemies\00 - Enemy Base\Scripts\Scr_Enemy_01_BasicFunctions.cs" />
-    <Compile Include="Assets\02 - Level\Scr_ChangeDirection.cs" />
+    <Compile Include="Assets\02 - Level\03 - Camino\Scr_ChangeDirection.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_01_Control.cs" />
     <Compile Include="Assets\Packages\Path-Creator-master\Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
     <Compile Include="Assets\01 - Player\01 - Scripts\Scr_Player_07_Interaction.cs" />

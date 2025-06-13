@@ -1,0 +1,13 @@
+Cinematica - La camara sigue a un pajaro que recorre la primera escena. 
+El recorrido termina en la estancia, en donde el pajaro se posa al lado del jugador el cual esta mirando el amanecer (no control).
+
+Tutorial - 1 hermano de guia le dice al jugador las teclas de movimiento
+Hermano - Dale Jose gervasio el abuelo esta esperando, espero que no te hayasa olvidado de como se camina boludo (simbolo de stick)
+
+El jugador seguria en la misma posicion hasta que se mueva, ahi se le de el control completo. Al moverse el pajaro se ira volando, a su vez mas pajaros salndarn volando en el fondo en manada, lo cual descbrira el titulo del nivel. 
+Title card: [Tutorial N°0 El Sauce 1776]
+
+[Al acercarce]
+Hermano - Dale que el abuelo nos espera [se va corriendo] seguime con (simbolo de stick + Trigger 1)
+Hermano - [Sube un desnivel] Dale subite con (sibmolo de Boton 4)
+Hermano - Acordate de decirle buenos dias a la hermana que se enoja, hablale con (simbolo de Boton 3) asi nos deja pasar

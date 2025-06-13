@@ -49,7 +49,8 @@ public class Scr_Player_05_Movement : MonoBehaviour
         if (playerState.passiveAction && playerState.stateGrounded)
         {
             // Turn around
-            spriteTransform.rotation = Quaternion.Euler(0, playerAction.rightSide ? 0 : 180, 0);
+            spriteTransform.localRotation = Quaternion.Euler(0, playerAction.rightSide ? 0 : 180, 0);
+
 
             // Horizontal Movement code
             if (playerControl.directionRight || playerControl.directionLeft)

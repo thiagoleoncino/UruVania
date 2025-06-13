@@ -1,7 +1,26 @@
 TO DO:
-	- Camara y movimiento
-		*Nuevo script de camara (Salto y seguimiento de personaje)
-		
+	- Explicar en detalle como hacer un objeto enemigo.
+
+Jugador:
+	- Movimiento
+		* Movimiento en terreno irregular sigue fallando
+		* Al saltar en diagonal contra una pared
+
+Funciones:
+	- Camino - Cambiar de un camino a otro en la escena.
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Documentos:
+	Actualizar:
+		- Simplificar y explicar Scr_ChangeDirection
+		- Cambios en Scr_Player_04_Physics
+
+	Desarollar:
+	- Enemy Demo documentacion y codigo (Diseño, Acciones y IA)
+	- Enemy 1 Basico
+        - Enemy 1 Avanzado
 
 Pequeños bugs/mejoras:
 	- Al Esquivar si se termina la invbulnerabilidad dentro de un objeto, quedamos atrapados en el objeto
@@ -9,11 +28,3 @@ Pequeños bugs/mejoras:
 	- Al atacar, si la hitbox enuevle por completo al enemigo, el knocback se activara como si lo 		          estuvieramos atacnado de atras
         - Agregar soporte a control
 		* No poder usar el control y el teclado a la vez
-
-Documentos:
-	Actualizar:
-
-	Desarollar:
-	- Enemy Demo documentacion y codigo (Diseño, Acciones y IA)
-	- Enemy 1 Basico
-        - Enemy 1 Avanzado

@@ -127,8 +127,8 @@ public class Scr_Player_06_Combat : MonoBehaviour
                     CanCombo = true,
 
                     Damage = 2,
-                    KnockbackX = 5,
-                    KnockbackY = 5,
+                    //KnockbackX = 5,
+                    //KnockbackY = 5,
                 });
 
                 normalAttack1UsedInCombo = true;
@@ -147,8 +147,8 @@ public class Scr_Player_06_Combat : MonoBehaviour
                 CanCombo = true,
 
                 Damage = 5,
-                KnockbackX = 10,
-                KnockbackY = 10,
+                //KnockbackX = 10,
+                //KnockbackY = 10,
             });
         }
     }

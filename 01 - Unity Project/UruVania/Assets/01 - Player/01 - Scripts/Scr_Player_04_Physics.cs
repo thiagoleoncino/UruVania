@@ -72,4 +72,27 @@ public class Scr_Player_04_Physics : MonoBehaviour
         rigidBody.velocity = new Vector3(0, rigidBody.velocity.y, 0);
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (CollidedHorizontally(collision))
+        {
+           PlayerStopMovementFunction();
+        }
+    }
+
+    private bool CollidedHorizontally(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Vector3 normal = contact.normal.normalized;
+
+            // Si el contacto viene de un lado (X o Z) y no de arriba o abajo
+            if (Mathf.Abs(normal.y) < 0.5f)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

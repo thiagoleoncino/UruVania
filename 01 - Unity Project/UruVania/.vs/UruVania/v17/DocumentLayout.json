@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\01 - player\\01 - scripts\\scr_player_04_physics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\01 - player\\01 - scripts\\scr_player_04_physics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\01 - player\\01 - scripts\\scr_player_08_action.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\01 - player\\01 - scripts\\scr_player_08_action.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Scr_Player_04_Physics.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
+              "RelativeDocumentMoniker": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
+              "RelativeToolTip": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_04_Physics.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwE4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T20:08:53.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Scr_Player_08_Action.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
+              "RelativeDocumentMoniker": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
+              "RelativeToolTip": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAwwGsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T20:24:40.183Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\old game\\08 - camera\\scr_zone_change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\old game\\08 - camera\\scr_zone_change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\01 - player\\01 - scripts\\scr_player_06_combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\01 - player\\01 - scripts\\scr_player_06_combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\old game\\06 - bosses\\scr_boss_life.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\old game\\06 - bosses\\scr_boss_life.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\01 - player\\01 - scripts\\scr_player_12_camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\01 - player\\01 - scripts\\scr_player_12_camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\old game\\06 - bosses\\boss_1\\scr_boss_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\old game\\06 - bosses\\boss_1\\scr_boss_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\03 - npc\\01 - enemies\\01 - basic enemies\\scr_enemy_b1_guriscorre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\03 - npc\\01 - enemies\\01 - basic enemies\\scr_enemy_b1_guriscorre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\06 - Bosses\\Scr_Boss_Life.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\OLD\\06 - Bosses\\Scr_Boss_Life.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\assets\\03 - npc\\01 - enemies\\00 - enemy base\\scripts\\scr_enemy_01_basicfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\03 - npc\\01 - enemies\\00 - enemy base\\scripts\\scr_enemy_01_basicfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,100 +31,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Scr_Zone_Change.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Old Game\\08 - Camera\\Scr_Zone_Change.cs",
-              "RelativeDocumentMoniker": "Assets\\Old Game\\08 - Camera\\Scr_Zone_Change.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Old Game\\08 - Camera\\Scr_Zone_Change.cs",
-              "RelativeToolTip": "Assets\\Old Game\\08 - Camera\\Scr_Zone_Change.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwC0AAAAAAAAAAAAAAA==",
+              "Title": "Scr_Player_06_Combat.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
+              "RelativeDocumentMoniker": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
+              "RelativeToolTip": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAmwJYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T23:18:05.099Z",
+              "WhenOpened": "2025-05-26T18:50:46.122Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Scr_Boss_Life.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Old Game\\06 - Bosses\\Scr_Boss_Life.cs",
-              "RelativeDocumentMoniker": "Assets\\Old Game\\06 - Bosses\\Scr_Boss_Life.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Old Game\\06 - Bosses\\Scr_Boss_Life.cs",
-              "RelativeToolTip": "Assets\\Old Game\\06 - Bosses\\Scr_Boss_Life.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCcAAAAJAAAAAAAAAA==",
+              "Title": "Scr_Player_12_Camara.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "RelativeDocumentMoniker": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "RelativeToolTip": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T23:17:48.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scr_Boss_1.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Old Game\\06 - Bosses\\Boss_1\\Scr_Boss_1.cs",
-              "RelativeDocumentMoniker": "Assets\\Old Game\\06 - Bosses\\Boss_1\\Scr_Boss_1.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\Old Game\\06 - Bosses\\Boss_1\\Scr_Boss_1.cs",
-              "RelativeToolTip": "Assets\\Old Game\\06 - Bosses\\Boss_1\\Scr_Boss_1.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAA6wG4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T23:16:39.128Z",
+              "WhenOpened": "2025-05-25T00:05:16.277Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Scr_Boss_Life.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\06 - Bosses\\Scr_Boss_Life.cs",
-              "RelativeDocumentMoniker": "Assets\\OLD\\06 - Bosses\\Scr_Boss_Life.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\OLD\\06 - Bosses\\Scr_Boss_Life.cs",
-              "RelativeToolTip": "Assets\\OLD\\06 - Bosses\\Scr_Boss_Life.cs",
+              "Title": "Scr_Enemy_01_BasicFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\03 - NPC\\01 - Enemies\\00 - Enemy Base\\Scripts\\Scr_Enemy_01_BasicFunctions.cs",
+              "RelativeDocumentMoniker": "Assets\\03 - NPC\\01 - Enemies\\00 - Enemy Base\\Scripts\\Scr_Enemy_01_BasicFunctions.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\03 - NPC\\01 - Enemies\\00 - Enemy Base\\Scripts\\Scr_Enemy_01_BasicFunctions.cs",
+              "RelativeToolTip": "Assets\\03 - NPC\\01 - Enemies\\00 - Enemy Base\\Scripts\\Scr_Enemy_01_BasicFunctions.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAkwIwAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T23:14:18.101Z"
+              "WhenOpened": "2025-05-24T23:54:35.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Scr_Player_01_Control.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Control.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Control.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Control.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_01_Control.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Scr_Enemy_B1_GurisCorre.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\03 - NPC\\01 - Enemies\\01 - Basic Enemies\\Scr_Enemy_B1_GurisCorre.cs",
+              "RelativeDocumentMoniker": "Assets\\03 - NPC\\01 - Enemies\\01 - Basic Enemies\\Scr_Enemy_B1_GurisCorre.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\03 - NPC\\01 - Enemies\\01 - Basic Enemies\\Scr_Enemy_B1_GurisCorre.cs",
+              "RelativeToolTip": "Assets\\03 - NPC\\01 - Enemies\\01 - Basic Enemies\\Scr_Enemy_B1_GurisCorre.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAMBcwBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T18:02:13.968Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Scr_Player_05_Movement.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_05_Movement.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T17:41:40.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Scr_Player_08_Action.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_08_Action.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwFoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T15:31:52.509Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Scr_Player_06_Combat.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
-              "RelativeDocumentMoniker": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
-              "RelativeToolTip": "Assets\\NEW\\01 - Player\\01 - Scripts\\Scr_Player_06_Combat.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAQwBwBAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T02:09:22.331Z"
+              "WhenOpened": "2025-05-24T23:54:27.425Z"
             }
           ]
         }
