@@ -16,6 +16,8 @@ Documentos:
 	Actualizar:
 		- Simplificar y explicar Scr_ChangeDirection
 		- Cambios en Scr_Player_04_Physics
+		- Cambios en Scr_Player_02_State (Ground Check)
+		- Cambios en Scr_ChangeCameraDirection
 
 	Desarollar:
 	- Enemy Demo documentacion y codigo (Diseño, Acciones y IA)
@@ -28,3 +30,4 @@ Pequeños bugs/mejoras:
 	- Al atacar, si la hitbox enuevle por completo al enemigo, el knocback se activara como si lo 		          estuvieramos atacnado de atras
         - Agregar soporte a control
 		* No poder usar el control y el teclado a la vez
+	- Al quedarse quieto despues de moverse, la camara se sigue ajustando a pqueñas cantidades, se nota en los sprites.

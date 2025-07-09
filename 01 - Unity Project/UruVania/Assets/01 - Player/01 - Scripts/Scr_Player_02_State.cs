@@ -126,7 +126,7 @@ public class Scr_Player_02_State : MonoBehaviour
     public bool IsGroundedFunction()
     {
         Vector3 center = new Vector3(capsuleCollider.bounds.center.x, capsuleCollider.bounds.min.y + 0.14f, capsuleCollider.bounds.center.z);
-        Vector3 halfExtents = new Vector3(0.3f, 0.15f, 0f);
+        Vector3 halfExtents = new Vector3(0.3f, 0.2f, 0f);
         return Physics.CheckBox(center, halfExtents, capsuleCollider.transform.rotation, groundLayerMask);
     }
 
@@ -136,6 +136,27 @@ public class Scr_Player_02_State : MonoBehaviour
         playerLand = true;
         yield return new WaitForSeconds(0.1f);
         playerLand = false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (capsuleCollider == null)
+            capsuleCollider = GetComponent<CapsuleCollider>();
+
+        // Copia exacta de los parámetros que usa IsGroundedFunction
+        Vector3 center = new Vector3(
+            capsuleCollider.bounds.center.x,
+            capsuleCollider.bounds.min.y + 0.14f,
+            capsuleCollider.bounds.center.z);
+
+        Vector3 halfExtents = new Vector3(0.3f, 0.15f, 0.5f);
+
+        // Elegí un color llamativo para la caja
+        Gizmos.color = Color.green;
+
+        // Dibuja la caja como línea (no sólida)
+        Gizmos.matrix = Matrix4x4.TRS(center, capsuleCollider.transform.rotation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, halfExtents * 2f);
     }
 
 }
