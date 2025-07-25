@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\01 - player\\01 - scripts\\scr_player_12_camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\01 - player\\01 - scripts\\scr_player_12_camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\uruvania\\01 - unity project\\uruvania\\assets\\02 - level\\03 - camino\\scr_changecameradirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB5B9B4-6CD6-0F29-5CDD-F56FA4D661D6}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - level\\03 - camino\\scr_changecameradirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Scr_Player_12_Camara.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "RelativeDocumentMoniker": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "RelativeToolTip": "Assets\\01 - Player\\01 - Scripts\\Scr_Player_12_Camara.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T23:20:47.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Scr_ChangeCameraDirection.cs",
               "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\02 - Level\\03 - Camino\\Scr_ChangeCameraDirection.cs",
               "RelativeDocumentMoniker": "Assets\\02 - Level\\03 - Camino\\Scr_ChangeCameraDirection.cs",
               "ToolTip": "C:\\Users\\Thiago\\Desktop\\UruVania\\01 - Unity Project\\UruVania\\Assets\\02 - Level\\03 - Camino\\Scr_ChangeCameraDirection.cs",
               "RelativeToolTip": "Assets\\02 - Level\\03 - Camino\\Scr_ChangeCameraDirection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAuwLoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T21:44:30.249Z",
               "EditorCaption": ""
